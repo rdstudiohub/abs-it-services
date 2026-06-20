@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABS IT Services | Malik Rizwan — Web Dev, Software, Menu Design & More</title>
+<meta name="description" content="Professional IT services by Malik Rizwan — Website Development, Software Development, Online Menu Design, Video Generation, Graphic Design & Google Map Ranking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:#0a0a0f;
+  color:#e0e0e0;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0a0a0f}
+::-webkit-scrollbar-thumb{background:#2a2a4a;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#3a3a6a}
+
+/* ===== ANIMATED BG ===== */
+#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,rgba(10,10,15,0.3) 0%,#0a0a0f 70%);z-index:1;pointer-events:none}
+
+/* ===== LAYOUT ===== */
+.wrapper{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:100px 0 80px;position:relative}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  padding:15px 0;
+  transition:all 0.4s ease;
+  background:transparent;
+}
+nav.scrolled{background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+nav .wrapper{display:flex;align-items:center;justify-content:space-between}
+.logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;font-size:1.3rem;
+  background:linear-gradient(135deg,#00d2ff,#7b2ff7);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-decoration:none;
+}
+.logo span{font-weight:300;color:rgba(255,255,255,0.5);-webkit-text-fill-color:rgba(255,255,255,0.5)}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{
+  color:#aaa;text-decoration:none;font-size:0.85rem;font-weight:500;
+  transition:color 0.3s;position:relative;
+}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,#00d2ff,#7b2ff7);transition:width 0.3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px}
+.hamburger span{width:25px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;
+}
+.hero .wrapper{width:100%}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(123,47,247,0.15);border:1px solid rgba(123,47,247,0.3);
+  border-radius:50px;padding:8px 20px;font-size:0.8rem;color:#b388ff;margin-bottom:30px;
+}
+.hero-badge i{font-size:0.7rem}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2.2rem,6vw,4.5rem);
+  font-weight:700;line-height:1.1;margin-bottom:20px;
+}
+.hero h1 .gradient-text{
+  background:linear-gradient(135deg,#00d2ff,#7b2ff7,#ff6b6b);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{
+  font-size:clamp(1rem,1.8vw,1.2rem);
+  color:#999;max-width:600px;margin-bottom:40px;
+}
+.hero-btns{display:flex;gap:15px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 32px;border-radius:50px;font-weight:600;font-size:0.9rem;
+  text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#00d2ff,#7b2ff7);
+  color:#fff;box-shadow:0 4px 25px rgba(0,210,255,0.3);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,210,255,0.4)}
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.2);color:#fff;background:transparent;
+}
+.btn-outline:hover{background:rgba(255,255,255,0.05);border-color:#7b2ff7}
+
+.hero-stats{
+  display:flex;gap:40px;margin-top:50px;padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.hero-stat h3{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat p{font-size:0.8rem;color:#666;margin-top:2px}
+
+/* ===== SECTION HEADERS ===== */
+.section-header{text-align:center;margin-bottom:60px}
+.section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(123,47,247,0.1);border:1px solid rgba(123,47,247,0.2);
+  border-radius:50px;padding:6px 18px;font-size:0.75rem;font-weight:600;
+  color:#b388ff;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px;
+}
+.section-header h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;
+  background:linear-gradient(135deg,#fff,#888);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.section-header p{color:#777;margin-top:10px;font-size:1rem}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image{
+  background:linear-gradient(135deg,rgba(0,210,255,0.08),rgba(123,47,247,0.08));
+  border-radius:24px;padding:40px;text-align:center;border:1px solid rgba(255,255,255,0.05);
+  position:relative;overflow:hidden;
+}
+.about-image .avatar-icon{
+  font-size:5rem;margin-bottom:10px;
+}
+.about-image .company-name{
+  font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;
+  background:linear-gradient(135deg,#00d2ff,#7b2ff7);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.about-image p{color:#888;font-size:0.9rem;margin-top:5px}
+.about-content h3{font-size:1.6rem;margin-bottom:15px;color:#fff}
+.about-content .highlight{color:#00d2ff}
+.about-content p{color:#999;margin-bottom:20px;line-height:1.8}
+.about-skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.about-skills span{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);
+  padding:8px 18px;border-radius:50px;font-size:0.8rem;color:#bbb;transition:all 0.3s;
+}
+.about-skills span:hover{border-color:#7b2ff7;color:#fff;background:rgba(123,47,247,0.1)}
+
+/* ===== SERVICES ===== */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);
+  border-radius:20px;padding:35px 28px;transition:all 0.4s;position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg,transparent,var(--accent,#7b2ff7),transparent);
+  transform:scaleX(0);transition:transform 0.4s;
+}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-8px);border-color:rgba(123,47,247,0.2);background:rgba(255,255,255,0.04)}
+.service-icon{
+  width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:18px;
+}
+.service-card h3{font-size:1.15rem;font-weight:600;margin-bottom:10px;color:#fff}
+.service-card p{font-size:0.87rem;color:#888;line-height:1.7}
+.service-card .service-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+  font-size:0.82rem;font-weight:500;color:var(--accent,#7b2ff7);text-decoration:none;
+}
+.service-card .service-link i{font-size:0.7rem;transition:transform 0.3s}
+.service-card:hover .service-link i{transform:translateX(4px)}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-filter{display:flex;justify-content:center;gap:12px;margin-bottom:40px;flex-wrap:wrap}
+.filter-btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.08);color:#888;
+  padding:10px 24px;border-radius:50px;font-size:0.82rem;font-weight:500;cursor:pointer;
+  transition:all 0.3s;
+}
+.filter-btn.active,.filter-btn:hover{background:rgba(123,47,247,0.15);border-color:#7b2ff7;color:#b388ff}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.portfolio-item{
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);
+  border-radius:20px;overflow:hidden;transition:all 0.4s;
+  opacity:1;transform:scale(1);
+}
+.portfolio-item.hidden{display:none}
+.portfolio-item:hover{transform:translateY(-6px);border-color:rgba(123,47,247,0.2);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
+.portfolio-thumb{
+  height:180px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(0,210,255,0.05),rgba(123,47,247,0.05));
+  position:relative;overflow:hidden;
+}
+.portfolio-thumb img{max-width:100px;max-height:100px;opacity:0.9;border-radius:8px}
+.portfolio-thumb .qr-code-img{max-width:90px;max-height:90px;opacity:0.85;transition:all 0.4s}
+.portfolio-item:hover .qr-code-img{transform:scale(1.08);opacity:1}
+.portfolio-body{padding:20px 22px 24px}
+.portfolio-body .category-badge{
+  display:inline-block;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;
+  color:#7b2ff7;background:rgba(123,47,247,0.1);padding:3px 12px;border-radius:50px;margin-bottom:8px;
+}
+.portfolio-body h3{font-size:1rem;font-weight:600;color:#fff;margin-bottom:6px}
+.portfolio-body p{font-size:0.8rem;color:#888;margin-bottom:12px;line-height:1.5}
+.portfolio-links{display:flex;gap:10px;flex-wrap:wrap}
+.portfolio-links a{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:0.78rem;font-weight:500;color:#00d2ff;text-decoration:none;
+  padding:6px 14px;border-radius:50px;border:1px solid rgba(0,210,255,0.2);transition:all 0.3s;
+}
+.portfolio-links a:hover{background:rgba(0,210,255,0.1);border-color:#00d2ff}
+
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact-info h3{font-size:1.4rem;color:#fff;margin-bottom:20px}
+.contact-info p{color:#999;margin-bottom:30px;line-height:1.7}
+.contact-details{display:flex;flex-direction:column;gap:16px}
+.contact-detail{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s;
+}
+.contact-detail:hover{background:rgba(255,255,255,0.04);border-color:rgba(123,47,247,0.2)}
+.contact-detail .icon{
+  width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.contact-detail .label{font-size:0.72rem;color:#666;text-transform:uppercase;letter-spacing:0.5px}
+.contact-detail .value{font-size:0.92rem;color:#ddd;font-weight:500;word-break:break-all}
+.contact-map{
+  border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.05);
+  height:100%;min-height:350px;
+}
+.contact-map iframe{width:100%;height:100%;border:none;filter:grayscale(0.5) invert(0.9)}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid rgba(255,255,255,0.05);padding:40px 0 30px;
+  margin-top:40px;
+}
+footer .wrapper{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer p{font-size:0.8rem;color:#555}
+footer .social-links{display:flex;gap:12px}
+footer .social-links a{
+  width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.04);color:#666;text-decoration:none;transition:all 0.3s;
+  font-size:0.85rem;
+}
+footer .social-links a:hover{background:rgba(123,47,247,0.15);color:#b388ff}
+footer .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;color:#444}
+
+/* ===== FLOATING WHATSAPP ===== */
+.whatsapp-float{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:54px;height:54px;border-radius:50%;
+  background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.3);
+  transition:all 0.3s;
+}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
+
+/* ===== BACK TO TOP ===== */
+.back-top{
+  position:fixed;bottom:90px;right:24px;z-index:998;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);
+  color:#888;display:flex;align-items:center;justify-content:center;
+  font-size:1rem;cursor:pointer;text-decoration:none;
+  opacity:0;pointer-events:none;transition:all 0.4s;
+}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{background:rgba(123,47,247,0.15);color:#b388ff}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:968px){
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;width:100%;background:rgba(10,10,15,0.98);flex-direction:column;padding:20px;gap:15px;border-bottom:1px solid rgba(255,255,255,0.05)}
+  .nav-links.open{display:flex}
+  .hamburger{display:flex}
+  .services-grid{grid-template-columns:1fr}
+  .hero-stats{gap:20px;flex-wrap:wrap}
+  .hero-stat{flex:1;min-width:120px}
+  .portfolio-grid{grid-template-columns:1fr}
+  section{padding:70px 0 50px}
+  footer .wrapper{flex-direction:column;text-align:center}
+}
+
+/* ===== LOADER ===== */
+.loader{
+  position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a0f;z-index:9999;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;
+  transition:opacity 0.8s,visibility 0.8s;
+}
+.loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-spinner{width:50px;height:50px;border:3px solid rgba(255,255,255,0.05);border-top-color:#7b2ff7;border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader p{font-size:0.85rem;color:#555;font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-spinner"></div>
+  <p>Loading...</p>
+</div>
+
+<!-- PARTICLES BG -->
+<canvas id="particles-canvas"></canvas>
+<div class="overlay"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="wrapper">
+    <a href="#" class="logo">ABS <span>IT</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrapper">
+    <div class="hero-badge reveal"><i class="fas fa-sparkles"></i> IT Department — ABS Est.</div>
+    <h1 class="reveal">
+      Crafting Digital<br>
+      <span class="gradient-text">Experiences That Matter</span>
+    </h1>
+    <p class="reveal">
+      Professional <strong>Website Development</strong>, <strong>Software Solutions</strong>,
+      <strong>Online Menu Design</strong>, <strong>Video Production</strong>,
+      <strong>Graphic Design</strong> &amp; <strong>Google Map Ranking</strong>
+      — under one roof.
+    </p>
+    <div class="hero-btns reveal">
+      <a href="#portfolio" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Portfolio</a>
+      <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hero-stat"><h3>13+</h3><p>Projects Delivered</p></div>
+      <div class="hero-stat"><h3>100%</h3><p>Client Satisfaction</p></div>
+      <div class="hero-stat"><h3>20+</h3><p>QR Solutions</p></div>
+      <div class="hero-stat"><h3>24/7</h3><p>Support</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrapper">
+    <div class="section-header reveal">
+      <div class="section-label"><i class="fas fa-user-tie"></i> Who We Are</div>
+      <h2>About <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Us</span></h2>
+      <p>Meet the team behind your digital success</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="avatar-icon">👨‍💻</div>
+        <div class="company-name">ABS Est.</div>
+        <p>IT Department — Dammam, Saudi Arabia</p>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:4px;font-size:0.82rem;color:#999">
+          <span><i class="fas fa-user" style="color:#7b2ff7;width:20px"></i> Malik Rizwan</span>
+          <span><i class="fas fa-briefcase" style="color:#00d2ff;width:20px"></i> Business Development Manager</span>
+          <span><i class="fas fa-building" style="color:#b388ff;width:20px"></i> IT Department</span>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <h3>Turning Ideas Into <span class="highlight">Digital Reality</span></h3>
+        <p>
+          I'm <strong>Malik Rizwan</strong>, Business Development Manager at <strong>ABS Est.</strong>
+          — IT Department. With years of experience in web development, software solutions,
+          and digital design, I help businesses establish a powerful online presence.
+        </p>
+        <p>
+          From restaurant menus to full-fledged gym websites, from QR solutions to Google
+          Maps ranking — our team delivers pixel-perfect, functional, and results-driven
+          digital products across Saudi Arabia.
+        </p>
+        <div class="about-skills">
+          <span>HTML/CSS/JS</span>
+          <span>React</span>
+          <span>Python</span>
+          <span>UI/UX Design</span>
+          <span>SEO</span>
+          <span>Google Maps</span>
+          <span>QR Codes</span>
+          <span>Video Editing</span>
+          <span>Graphic Design</span>
+          <span>Menu Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrapper">
+    <div class="section-header reveal">
+      <div class="section-label"><i class="fas fa-cogs"></i> What We Do</div>
+      <h2>Our <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Services</span></h2>
+      <p>Complete IT solutions tailored for your business</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" style="--accent:#00d2ff">
+        <div class="service-icon" style="background:rgba(0,210,255,0.1);color:#00d2ff"><i class="fas fa-globe"></i></div>
+        <h3>Website Development</h3>
+        <p>Responsive, modern websites — business sites, landing pages, e-commerce &amp; portals. Built with speed &amp; SEO in mind.</p>
+        <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#7b2ff7">
+        <div class="service-icon" style="background:rgba(123,47,247,0.1);color:#b388ff"><i class="fas fa-code"></i></div>
+        <h3>Software Development</h3>
+        <p>Custom software solutions, automation tools, data pipelines &amp; business management systems for any industry.</p>
+        <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#ff6b6b">
+        <div class="service-icon" style="background:rgba(255,107,107,0.1);color:#ff6b6b"><i class="fas fa-utensils"></i></div>
+        <h3>Online Menu Design</h3>
+        <p>Bilingual Arabic/English digital menus with QR access. Restaurant, cafe, juice bar &amp; food truck menus — fully responsive.</p>
+        <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#ffd93d">
+        <div class="service-icon" style="background:rgba(255,217,61,0.1);color:#ffd93d"><i class="fas fa-video"></i></div>
+        <h3>Video Generation</h3>
+        <p>Professional video production — promotional, business explainers, social media reels &amp; AI-powered video content.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#6bcb77">
+        <div class="service-icon" style="background:rgba(107,203,119,0.1);color:#6bcb77"><i class="fas fa-paint-brush"></i></div>
+        <h3>Graphic Design</h3>
+        <p>Logo design, branding, social media graphics, flyers, brochures &amp; all visual identity materials for your business.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#ff8a5c">
+        <div class="service-icon" style="background:rgba(255,138,92,0.1);color:#ff8a5c"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Google Map Ranking</h3>
+        <p>Local SEO &amp; Google Business Profile optimization to rank your business higher on Google Maps &amp; local search.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="wrapper">
+    <div class="section-header reveal">
+      <div class="section-label"><i class="fas fa-briefcase"></i> Our Work</div>
+      <h2>Featured <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Projects</span></h2>
+      <p>13+ live projects — menus, gyms, perfumes, hotels &amp; more</p>
+    </div>
+    <div class="portfolio-filter reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="menu">Menus</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="fitness">Fitness</button>
+      <button class="filter-btn" data-filter="retail">Retail</button>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrapper">
+    <div class="section-header reveal">
+      <div class="section-label"><i class="fas fa-phone"></i> Get in Touch</div>
+      <h2>Let's Work <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Together</span></h2>
+      <p>Ready to start your project? Reach out today</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Contact Information</h3>
+        <p>Have a project in mind? Let's discuss how we can help your business grow digitally.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="icon" style="background:rgba(0,210,255,0.1);color:#00d2ff"><i class="fas fa-user"></i></div>
+            <div>
+              <div class="label">Name</div>
+              <div class="value">Malik Rizwan</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon" style="background:rgba(123,47,247,0.1);color:#b388ff"><i class="fas fa-briefcase"></i></div>
+            <div>
+              <div class="label">Designation</div>
+              <div class="value">Business Development Manager — IT</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon" style="background:rgba(255,107,107,0.1);color:#ff6b6b"><i class="fas fa-building"></i></div>
+            <div>
+              <div class="label">Company</div>
+              <div class="value">ABS Est. — IT Department</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon" style="background:rgba(107,203,119,0.1);color:#6bcb77"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="label">Phone / WhatsApp</div>
+              <div class="value"><a href="tel:+966553604862" style="color:#ddd;text-decoration:none">+966 55 360 4862</a></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon" style="background:rgba(255,217,61,0.1);color:#ffd93d"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:abs@awakentraders.ae" style="color:#ddd;text-decoration:none">abs@awakentraders.ae</a></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon" style="background:rgba(255,138,92,0.1);color:#ff8a5c"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="label">Location</div>
+              <div class="value">Dammam, Saudi Arabia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229357.56925237572!2d49.95039211425622!3d26.420682977482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e3645e2e2e2e2e2%3A0x0!2sDammam%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrapper">
+    <div>
+      <p>&copy; 2026 <strong>ABS Est.</strong> — IT Department. All rights reserved.</p>
+      <p style="margin-top:4px;font-size:0.72rem;color:#444">Malik Rizwan | Business Development Manager</p>
+    </div>
+    <div class="footer-brand">ABS IT</div>
+    <div class="social-links">
+      <a href="https://wa.me/966553604862" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:abs@awakentraders.ae" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/rdstudiohub" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/966553604862" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+<script>
+// ===== PORTFOLIO DATA =====
+const projects = [
+  { id:1, name:"Tom Yum Kung Menu", cat:"menu", desc:"Thai House Restaurant — bilingual digital menu with featured items & gallery banners", url:"https://rdstudiohub.github.io/tom-yum-kung-menu/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHMUlEQVR4nO3d0Y3cOBBF0TcLZ+EgnH8YG4TjkBMwYdCoUpHtcz4XA42m3XtBgFTp63meAP+2/6ZvAJgnBIAQAEIARAiACAEQIQAiBECEAIgQABECIEIARAiACAEQIQAiBECEAIgQABECIEIARAiACAEQIQCSfKu60PfvP6ou1ernz/9/+99X97/6+V2716+6n6rfu1L1+Zzm9u/zLisCQAgAIQAiBECEAIgQABECIIXnCFam9pm798Nv2W+v+r3dn0/V712pOpdxy/d5lxUBIASAEAARAiBCAEQIgAgBkBfOEaycts9cpfs5/+795O55B7vXqfr5brd/n60IACEAhACIEAARAiBCAEQIgAyeIzhN93sNqlS9B+GWfe/Tzgt8KisCQAgAIQAiBECEAIgQABECIM4R/FHV/vzUfP7ueQGnXYe/Y0UACAEgBECEAIgQABECIEIAZPAcwWnP+VeZ+ruq9tW7z0FUnXc47dzB7d9nKwJACAAhACIEQIQAiBAAEQIgL5wjuP258e73CPj5vzP1Horbv88rVgSAEABCAEQIgAgBECEAIgRAkq/neabv4Qinzdvf3Z/fvc6uqt87dX5h5fY5AlWsCAAhAIQAiBAAEQIgQgBECIAUziM47fnzW54b/9T7P81pn3PV+ZSqz9+KABACQAiACAEQIQAiBECEAMgL8whufz68e05B93sBuucj7P7e0+YUTH3+U++DWLEiAIQAEAIgQgBECIAIARAhAPLCPIKq63Q/Tz41N2Gle5956vn8T/33uuW8wIoVASAEgBAAEQIgQgBECIAIAZDCeQSf+t77qt/7qe9lqDK1f979OZ/2fV6xIgCEABACIEIARAiACAEQIQBSOI+ge59zdz+2e592at+7+zn53eusnHafVf9ep513qLofKwJACAAhACIEQIQAiBAAEQIgL7zXYLXPWfXcfvd+eLfd+5l6jr3qufqp+f/d+/CnzRfYZUUACAEgBECEAIgQABECIEIAZPC9BlXX33Xa/u3K1Lz9lU/dz1+Zet/E1PfTigAQAkAIgAgBECEAIgRAhABI4TyCXVPz529/Hr7q93bvh0/NKVg57T0Up83FsCIAhAAQAiBCAEQIgAgBECEActE8gl1V+8ynPX9+2rmGqutPzRHo/vkq3f8fWREAQgAIARAhACIEQIQAiBAAeeEcwa7Tnj+f2h8+bW7CrqnzCFXXP41zBEA7IQCEABACIEIARAiACAGQF95rsLvvfdrz9rfvV3fPZeje3+4+V9L9vTptTseKFQEgBIAQABECIEIARAiACAGQi+YR7P7e0/aHp/aTu+c4TJ1TuP09AlPzNVasCAAhAIQAiBAAEQIgQgBECIC8cI6gex/4lutPnUc4bX9+Zer5/Fu+J92sCAAhAIQAiBAAEQIgQgBECIAUniNYmXoefmpf/bTn2HdN3X/3HIRdt3wfqlgRAEIACAEQIQAiBECEAIgQAEm+Tf3iTz0vMPX+gql9+NOus3LL52MeATBGCAAhAIQAiBAAEQIgQgCk8BxB977r1Jz/XVXXuX1f/Zb3Mtwy16CbFQEgBIAQABECIEIARAiACAGQwXkEK937w6fNI+ie8z91XmBK93mQ7nMKU/MsrAgAIQCEAIgQABECIEIARAiAJF/P85RcaGr/c9dpz593fz5Vf+/U+Ytdn3q+o5sVASAEgBAAEQIgQgBECIAIAZDCeQS37IevVO0Pd89BWDltX3rltL936rzAaecLrAgAIQCEAIgQABECIEIARAiAFM4j2HXa8/ndz7GvdJ8vmHLL/vnKaZ+/9xoA7YQAEAJACIAIARAhACIEQArnEdyyf969H1v1HPvu9aee8++ey3D7OYvT3rOwYkUACAEgBECEAIgQABECIEIAZHAewWmm5tvv6j53cNo8/1vOldwyZ2HFigAQAkAIgAgBECEAIgRAhADI4DyCKbfMI9i9zmnnBXaddv7ilvduVLEiAIQAEAIgQgBECIAIARAhAFJ4jmBl6nnsquf2q0ydF9i9nyrdcwe699s/dX7EihUBIASAEAARAiBCAEQIgAgBkBfOEaxU7WNP7fd26z4Hccsc/qnzDlOm7seKABACQAiACAEQIQAiBECEAMjgOYLTVO3DV+m+n6q5ALvXr/r5XVN/72nnZVasCAAhAIQAiBAAEQIgQgBECIA4R/BH3c/tT71/oeq9A1Pvg1ipuv/u91CsmEcAjBECQAgAIQAiBECEAIgQABk8R3Da/Pwqu/vPVZ/Dac/b3/Kehe77v4UVASAEgBAAEQIgQgBECIAIAZAXzhHcsr/a/bz6afvt3ecOVqa+D7t/72lzIrrPWVgRAEIACAEQIQAiBECEAIgQAEm+nueZvgdgmBUBIASAEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgAgBkOQX+L3D33i630IAAAAASUVORK5CYII=" },
+  { id:2, name:"Action Juice Menu", cat:"menu", desc:"أكشن جوس — vibrant juice bar menu in Arabic/English, fully responsive", url:"https://rdstudiohub.github.io/Action-Juice/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHHklEQVR4nO3d4a3jNhpA0TuLdJEitv8ytojU4TQQIeCC9Ee9OednYEh+GueCACny1+fzCfi9/Wf6CwDzhAAQAkAIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQAqP7YdaE///zvrksd9ddf//vH/77r+69e/+nzT6ae867vuev5TH3+Nqv/Lk+MCAAhAIQASAiAhABICICEAGjjOoInu+Y5V63OA099zydvmVff9dxWr/OW77nL6XUNRgSAEABCACQEQEIAJARAQgD0hXUET06//7/Lbe+xr15/6vNT+zK8fZ5/6vsbEQBCAAgBkBAACQGQEAAJAdDgOoLbnJ5vX73O1PqIJ7d9n13Xv20fiilGBIAQAEIAJARAQgAkBEBCAGQdwf9tal/906b2Bdi1v8Pp9Qg/lREBIASAEAAJAZAQAAkBkBAADa4j+Knz6lNOnxewauo8iKnzJt7yO3liRAAIASAEQEIAJARAQgAkBEBfWEfwU98P3zVPftu+Bqe//+nvc9pP/T0bEQBCAAgBkBAACQGQEAAJAdDGdQRvfx/7yel549vOBTjt9PqI0+sXfiojAkAIACEAEgIgIQASAiAhAKpfn89ny4Wm5oen3od/MnW+wNuv/7uZ+l09MSIAhAAQAiAhABICICEAEgKgjesInkztz/9k1/z5becanP67Vq/zFqfXO9y2XuCJEQEgBIAQAAkBkBAACQGQEABtPNfgyW371e+671vOEZhapzA1Hz51TsRb1gs8MSIAhAAQAiAhABICICEAEgKgL6wjmJpXv+09+dPfZ+p8h13XnzoXY/Xzp893sB8BMEYIACEAhABICICEAEgIgDauIzg9X71qal76LfPMp9+3n9qv4fTz32X1+Zz+PRsRAEIACAGQEAAJAZAQAAkBUP36fD4jN16dv71tf4HT5wK8ZR5+1W37DrzlvtYRAMcJASAEgBAACQGQEAAJAdAXzjV4sut97NNOz/fu+nun9kE47afed+r8gidGBIAQAEIAJARAQgAkBEBCALRxP4Lb3s8/vW//6fv+bn/Xqtu+z5Op57DKiAAQAkAIgIQASAiAhABICIA27kcwNa9727z6T7XrOZzeN2HXv8uu3+dt6wWeGBEAQgAIAZAQAAkBkBAACQHQD9iPYNXUfadMvf9/+jq7rj+1DmWVdQTAcUIACAEgBEBCACQEQEIAtHE/glW37be/6i3z57ftq3/bc1u975O3r08xIgCEABACICEAEgIgIQASAqAvrCM4vR/+besLppyen79t3n7X9W/bR2Pq92lEAAgBIARAQgAkBEBCACQEQBeeazD1/vmT285lWHXb+/+nn8PU7+rt61CMCAAhAIQASAiAhABICICEAGjjOoLT3v4e+FvWQdx23sRbntvqdVad/n0aEQBCAAgBkBAACQGQEAAJAdDGcw1Oz6++5bz60++3T53jMLXOYmpdwy5v2e/AiAAQAkAIgIQASAiAhABICIAG9yM4PX97+n3yqXPsp57bqqn9I3Zd//R9p9aDPDEiAIQAEAIgIQASAiAhABICoI3rCG6bn3/LfvtT++ffdv1dpubt37K+44kRASAEgBAACQGQEAAJAZAQAH1hHcFt8/+3Ob3+4vR1Vq+/auo8hV3e8js0IgCEABACICEAEgIgIQASAqD6Y9eFTq8XWPWW+eGp99tPv29/27kPq/e9bb+M04wIACEAhABICICEAEgIgIQAaOM6glW3nRcwNX8+Ne+96u3z6lP/Lrue/+nnY0QACAEgBEBCACQEQEIAJARAXzjX4MnU/vxvPx/h7fs4rJpaD3Labb8rIwJACAAhABICICEAEgIgIQDauI7g7abeP596v33V1L4Aq9dZddvfNcWIABACQAiAhABICICEAEgIgDaea3Db+95PptYFPF1naj78tvf5p85feDK1LmDqvkYEgBAAQgAkBEBCACQEQEIAtHEdwZOp97GnzllY9VPve9s+DqumzomY+v/FiAAQAkAIgIQASAiAhABICIC+sI7gyVv2pX/LfXe9x376+rvuu8tt+2hM/Q6NCAAhAIQASAiAhABICICEAGhwHcFtTu+Hv+r0/P+qXdfftU5h9fNvfz6nGREAQgAIAZAQAAkBkBAACQGQdQT/6u3nMtx2vsDUuozT6xRWTd33iREBIASAEAAJAZAQAAkBkBAADa4jmJqfX3X6vfdd8/C3zf/v2k9h1dQ5BVPz/7sYEQBCAAgBkBAACQGQEAAJAdAX1hHcdv78k9Pvve/6/Fv25991/al5+Nu+5+n7GhEAQgAIAZAQAAkBkBAACQFQ/fp8PtPfARhmRAAIASAEQEIAJARAQgAkBEBCACQEQEIAJARAQgAkBEBCACQEQEIAJARAQgAkBEBCACQEQEIAJARA9TdY9MQHi8BboAAAAABJRU5ErkJggg==" },
+  { id:3, name:"Yasmeen Al Dammam", cat:"menu", desc:"مطعم ياسمين الدمام — Arabic restaurant menu with complete categories & pricing", url:"https://rdstudiohub.github.io/Yasmeen-Al-Dammam/", qr:"data:image/png;base64,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" },
+  { id:4, name:"DJ BAZZA Menu", cat:"menu", desc:"دي جي بازا — premium Saudi restaurant menu, bilingual, modern design", url:"https://rdstudiohub.github.io/DJ-BAZZA-Menu/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHPklEQVR4nO3dQYocORCG0b8G38KH8P2PMYfoc6QXA4YBayEIVYSq31sak5XdXXwIFKl8Pc8T4Hv7p/sGgH5CAAgBIARAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiDJj6oL/fz5q+pSR319/fvXf1/d/+7/7/rcrp+ryup+dp3+u0xT9XuzIgCEABACIEIARAiACAEQIQBSOEewUrXPuatqH/j2eYGVqp+r6vq7P+/K6bmA27/PK1YEgBAAQgBECIAIARAhACIEQN4wR7By+77uyrTn2E/vq0+bj+hy+/fZigAQAkAIgAgBECEAIgRAhABI4xzBNNPmEXZVPbe/Mm0///b7n8aKABACQAiACAEQIQAiBECEAIg5gj+6nqtf/f+q66ycvp+VqnmNqt8D/7EiAIQAEAIgQgBECIAIARAhANI4RzBtv7fqef7T+/xVTs8dTHv+//T3bdr3eZcVASAEgBAAEQIgQgBECIAIAZA3zBFM209emXYewcq0+9l1+v5Xbpnv6GJFAAgBIARAhACIEAARAiBCAKRwjuD257Fvea5+V9d++zRV8xqfyooAEAJACIAIARAhACIEQIQASOEcwac+7911/v+0cwRWTs8pVH0fdq9zy3sfqv7uVgSAEABCAEQIgAgBECEAIgRAktfzPEc/4PR+ade++ul5h2nzC6dN21evmju45e9iRQAIASAEQIQAiBAAEQIgQgCkcI7gln3pqufDu/aBv9t5DV3XWem6/unvlRUBIASAEAARAiBCAEQIgAgBkML3Guw6/fx51f5q13n7uz/X6f3qXaffd3B6v73rfQRdcyJWBIAQAEIARAiACAEQIQAiBEAK5whueT6/63yEKl3vU5h2DsLKtPcLrK5z+ryMXVYEgBAAQgBECIAIARAhACIEQArnCLqez185PS9w+hz+08+9Vzm9P3/L7+32eRYrAkAIACEAIgRAhACIEAARAiCN5xFUXafrefKVrvcpfOrP1aXrHI2u+QIrAkAIACEAIgRAhACIEAARAiDJ63melg/umi+o8qn7zF3vTehy+vyCW86VsCIAhAAQAiBCAEQIgAgBECEA8oY5gq799l23nKdQ9bm7us4RuOX8gpVp8y8rVgSAEABCAEQIgAgBECEAIgRACt9rMG1eoOqc/2n7/Ls/17Tn/1emvQ9i2j7/aVYEgBAAQgBECIAIARAhACIEQArnCKbNC+zuA0/bn79lDuL2v3uV299zYUUACAEgBECEAIgQABECIEIA5A3nEew6vX9+u67z/Kt+z13zDlW6vuenWREAQgAIARAhACIEQIQAiBAAKZwjWKnaHz79/6vuc/f6Vde5/Xn+ldN/ly6nz8vYZUUACAEgBECEAIgQABECIEIA5A1zBF370lXPye9ef3WdaXMQ095TcPo6p+cmbp9rsCIAhAAQAiBCAEQIgAgBECEAkrye5+m+h//p2o/tOg+/a95hV9dcw7T3INx+/ytWBIAQAEIARAiACAEQIQAiBEAKzyO4Zb905fT97zp9jkPV9aedX3B6LmD3OlWfe/r7ZkUACAEgBECEAIgQABECIEIApHCO4PQ+/8q0c+9Pv79g17T779qfX5n2fo0uVgSAEABCAEQIgAgBECEAIgRA3nAeQZeucxBuP39h5fRz8tOe55/2HorT3wcrAkAIACEAIgRAhACIEAARAiCFcwSnTXsv/UrVPnDX3EHX8/O3PLffdf7F7nV2WREAQgAIARAhACIEQIQAiBAASV7P85RcaNrz21XXr9J1vsC0/eqVrvvvmk+p+t6aIwDKCAEgBIAQABECIEIARAiANM4R3LKfP20+Ytq5DLf8fW9570YXKwJACAAhACIEQIQAiBAAEQIghXMEt5u2f161z/ypP9dK1zkLXecUVLEiAIQAEAIgQgBECIAIARAhAJL8qLrQtOe9V07v007b/6/63Gn77StV1zn9e/BeA2AcIQCEABACIEIARAiACAGQwjmCla7nq7vmGk7v/097vr3rc28/N2HX6fuxIgCEABACIEIARAiACAEQIQDyhjmClVv2e0/v80+bd+jan5/2e+jSNZdhRQAIASAEQIQAiBAAEQIgQgCkcY7gdtP21avmHars7odPe6/B7vV3dc0LrFgRAEIACAEQIQAiBECEAIgQADFH8EfXe+9PX6dqH373fnY/9/S5AN9tbmKXFQEgBIAQABECIEIARAiACAGQxjmCae+fX6na3z79HoFp5xF03c8t8wjT3qdgRQAIASAEQIQAiBAAEQIgQgDkDXME0/ZLV7qeA6+6/uk5hZXd61f9/yq793P6Pk//vVasCAAhAIQAiBAAEQIgQgBECIAkr+d5uu8BaGZFAAgBIARAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCACT5DeKjxwyEvaFdAAAAAElFTkSuQmCC" },
+  { id:5, name:"Juice Bar Menu", cat:"menu", desc:"Premium juice bar menu — A4 portrait, bilingual Arabic/English", url:"https://rdstudiohub.github.io/Juice-Bar-Menu/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHKklEQVR4nO3dwY3cOhBF0TfGZOEgnH8YDsJx6C/+mgsaVSqyfc56IPWoGxcESJFfz/ME+Lf9mP4AwDwhAIQAEAIgQgBECIAIARAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQAiBAAEQIgQgBECIAIAZDku+pCP3/+qrpUqz9/fpdcZ/X/Tl1/6u93VV3/tOtMqfq9GREAQgAIARAhACIEQIQAiBAAKVxHsFI1z7mrah64e36+StV8+C3rC057zt261zUYEQBCAAgBECEAIgRAhACIEAB5YR3BSvf8866p+fOVqnUKu89nd96+Svfzn9o/YtfUOgUjAkAIACEAIgRAhACIEAARAiCD6whuUTX/XLXffvd+/lV/f9r5AlPz87cwIgCEABACIEIARAiACAEQIQBiHcFfq9oXoPv9/6n3+af2U1iZOgfhFkYEgBAAQgBECIAIARAhACIEQAbXEdw+fzv1fn7V9Xfv273uYGrfhyq3/56NCAAhAIQAiBAAEQIgQgBECIC8sI5gal63Sve8d/f1P1XVOoWq+97OiAAQAkAIgAgBECEAIgRAhABI4ToC89v/m5r/r1q/MPX3VbrXd3wqIwJACAAhACIEQIQAiBAAEQIghesIpt4P37X6PFWf85Z9+G9/r77qOd/y++xmRAAIASAEQIQAiBAAEQIgQgAk+XqeZ+TGVfO6VfOuU9dfmVrXsOu057Zy2vM87Xs0IgCEABACIEIARAiACAEQIQBSuI7gU+eTb9+fv0rV5zltf4fb96Go+j0YEQBCAAgBECEAIgRAhACIEAApPNdg1+689C3n1VfNt3fv27+re/1F9/c79Xmm1l/sMiIAhAAQAiBCAEQIgAgBECEA8sK5BlPnzO+6Zd+EXaftnz/1e6jad6DKaecsGBEAQgAIARAhACIEQIQAiBAAeWEdwcrUvv279506r+G099V3VT3P7nMKTtv3YYoRASAEgBAAEQIgQgBECIAIAZDBcw2qTM0zT61HmNrvoPu+Vde/5Xs5bf2CEQEgBIAQABECIEIARAiACAGQwXMNpvZ1P+36u/ft3neg+77d8+enfb+nXX/FiAAQAkAIgAgBECEAIgRAhADI4LkGK93zxiu3nCMwdf7Cymn3Xbnlue2yjgAoIwSAEABCAEQIgAgBECEAUriOoHs+dup8+6l55pWp9/M/9dyHqfUpU/sOrBgRAEIACAEQIQAiBECEAIgQAHlhHcHtPnWefPf6U9fpvv5p6w522Y8AKCMEgBAAQgBECIAIARAhAJJ8d99g6ryAqvneqffwd522D//t6w5Wf3/a/g5VjAgAIQCEAIgQABECIEIARAiAFO5H0O2W9/+ndM+37973tP0Cuq9/2jkFu4wIACEAhACIEAARAiBCAEQIgAyea3Dae+Yrt3zOldP2Qejed2D3viunfe/dz8eIABACQAiACAEQIQAiBECEAEjhuQZV+8Ofdh7BLfPAVabmz6tM7S/Qrft5GhEAQgAIARAhACIEQIQAiBAAGTzX4PZ55ird89W37xdwyzz/yi3rR4wIACEAhACIEAARAiBCAEQIgLxwrsHUPOot5x2sdD/PT52Hn9qPYOpzVjEiAIQAEAIgQgBECIAIARAhAPLCOoKV0+bzq+btu89BOG3+ecotv7fT1tesGBEAQgAIARAhACIEQIQAiBAASb67b7A7X1o133va/G33+oLd+650z7dX7YOwe/2q5797nVv2KTAiAIQAEAIgQgBECIAIARAhAPLCOoJdU/PMt6wvqLpO97qA0/ZNmPo9nPZ7WzEiAIQAEAIgQgBECIAIARAhAPLCuQa37Cd/2uevMjWPXbUeZKV7v4Mqt5yDYEQACAEgBECEAIgQABECIEIApHAdwe0+9b30W841mDrfofv7XbEfAXAcIQCEABACIEIARAiACAGQwnMNTnsPfGX3HPvu/6v7HIeqv69yy7qMqut3/66q/l8jAkAIACEAIgRAhACIEAARAiCF6whWTtvPv+rvTztnYddp6yNOWwcxtR5haj2OEQEgBIAQABECIEIARAiACAGQF9YRrJz2Pvauqfnef229Q/d8e/f3eNp6gRUjAkAIACEAIgRAhACIEAARAiCD6whuMTUP3D1v371eoPs9/Fvuu2tqXYwRASAEgBAAEQIgQgBECIAIARDrCMZ1v1ffvb6gyu78/NQ+CLt/f9r3u2JEAAgBIARAhACIEAARAiBCAGRwHcHUe9crU+/h76q6ftW8fZXb10F074PQzYgAEAJACIAIARAhACIEQIQAyAvrCE6bL13Z/ZxT89UrVfvzV/19lanzDqrcsr7AiAAQAkAIgAgBECEAIgRAhABI8vU8z/RnAIYZEQBCAAgBECEAIgRAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEABJ/gMB9t5oPY73mQAAAABJRU5ErkJggg==" },
+  { id:6, name:"Sambal Menu", cat:"menu", desc:"Sambal — authentic Indonesian/Malaysian restaurant digital menu", url:"https://rdstudiohub.github.io/sambal-menu/", qr:"data:image/png;base64,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" },
+  { id:7, name:"Pakistani Foods Menu", cat:"menu", desc:"Top 10 Pakistani Foods — digital menu showcasing Pakistani cuisine", url:"https://rdstudiohub.github.io/Pakistani-Foods-Menu/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHKklEQVR4nO3d0W3kOBBF0eeFs5ggNv8wNoiJQxMBZ0GgSkW2z/kW1HK7cUGAFPn1PE+An+2f6QcA5gkBIASAEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgAgBECEAIgRAhACIEAARAiBCAEQIgCTfVTf69evfqlu1+v37v63rd/+u1f277zP1ubtOe87uv7fb7u95xYgAEAJACIAIARAhACIEQIQASPL1PE/JjXbnt7t1P0/VfPWU0+btV6a+55/2ezYiAIQAEAIgQgBECIAIARAhAFK4H8Gu7vfbd532PCtV8+q76wK638/v3mfhtHUlK1PrFIwIACEAhACIEAARAiBCAEQIgAyuI7jFaesCVqrOQdi9/8pp5wucth/EaYwIACEAhACIEAARAiBCAEQIgFhH8L+q5uG73+dfmdrnv2pdw6eeU3AaIwJACAAhACIEQIQAiBAAEQIgg+sIbpm/nXrP/6edI2C9xiwjAkAIACEAIgRAhACIEAARAiAvrCOYmtf9VN3z8LfoXgex+7m3MyIAhAAQAiBCAEQIgAgBECEAknw9zzP9DEfYnR/ufk++aj686jm71yN0rwv41PUUVYwIACEAhACIEAARAiBCAEQIgBSuI5h6P3zX1HzyafPkt7xXX/X/8vv8OyMCQAgAIQAiBECEAIgQABECIC/sR9A9H9v9vv3U9VVO20eg6v67pvZl6P79VDEiAIQAEAIgQgBECIAIARAhADK4juC0efip+eGq51npPk9h6nyH7vt3/66mfrcrRgSAEABCAEQIgAgBECEAIgRADjzX4LT350+bT/7U73Pq/IKq+++a2h9hxYgAEAJACIAIARAhACIEQIQAyAefa3Da+QIrp83zdzvte556nirWEQBlhAAQAkAIgAgBECEAIgRAku/pB+hy2v783aqeZ+p9+1v2a7h9P4UVIwJACAAhACIEQIQAiBAAEQIghesIuve3X11fNc9cpfu99+59Fm4532Fl6pyF7t+hcw2AdkIACAEgBECEAIgQABECIIPnGnSvL5i6ftdp+yPcPn8+9TxV99/9XOsIgDJCAAgBIARAhACIEAARAiAvrCOYctq5A93zyd2fuzK1D//t5x1MrftYMSIAhAAQAiBCAEQIgAgBECEAMrgfwcrt+/Ov3PJe/e37Ppy2vmDltPUgRgSAEABCAEQIgAgBECEAIgRACtcRdL//f9o8+a7T5sl37z91n+77n7YvwNT6AiMCQAgAIQAiBECEAIgQABECIMl31Y2630s/7Xl2529v2R+h6vrb1x1MnYsx9TxGBIAQAEIARAiACAEQIQAiBEAK1xF0u2X+v3v/+V2nnS+wus9p60qm7lN1/S4jAkAIACEAIgRAhACIEAARAiAvnGtw2r4Ap91n9/67btkHoXuefOq8gFvWmxgRAEIACAEQIQAiBECEAIgQAHlhP4LT1gtUOW0euMrt8+dT+wtUmVrvYEQACAEgBECEAIgQABECIEIApHAdQfd8bPf86i37FFTpfp7u723qd7Wr6nt2rgHQTggAIQCEAIgQABECIEIA5IX9CKbOgZ96n7zK1Hv7p72fv1L1nFN/72nfpxEBIASAEAARAiBCAEQIgAgBkOTreZ6SG1XNi3afd7By+7z6ymn7IFQ5bb3A7ftWGBEAQgAIARAhACIEQIQAiBAAOXA/gipT58xP3X9X97qJqXn71f2r/t6q67u/511GBIAQAEIARAiACAEQIQAiBEBeWEdQpXufgql58u7P3Z3HrvrcW9Zx3LIPRff3Y0QACAEgBECEAIgQABECIEIA5IVzDabe9z5t3/ip5+leZzE1337aPH+Vqd+zEQEgBIAQABECIEIARAiACAGQwnUEt+uep51aBzG1z8Jp60Gm/r8rp51zYUQACAEgBECEAIgQABECIEIApPBcg1veA6/a57/qc7vPQViZmseeWpcxdf/ufRPsRwCUEQJACAAhACIEQIQAiBAAKVxHsHLaOQJV10/ND1e9z9+97qP7/fypdR+7bjmPw4gAEAJACIAIARAhACIEQIQAyAvrCFZOex9719T88Gn7/3fPe3ev1+heT9H9/FWMCAAhAIQAiBAAEQIgQgBECIAMriO4Rfd7/t3z9t37LHzqc1Z9bvd9qhgRAEIACAEQIQAiBECEAIgQALGOoFz3fvhV15+2r37Veo3ufRCqrt+9T/ffa0QACAEgBECEAIgQABECIEIAZHAdwdR5BCvd8//d759XnV9Qdf2uqXMZqkx9bhUjAkAIACEAIgRAhACIEAARAiAvrCM47Rz4le73+afWF3SfR9Dt9n0Wbvn9GxEAQgAIARAhACIEQIQAiBAASb6e55l+BmCYEQEgBIAQABECIEIARAiACAEQIQAiBECEAIgQABECIEIARAiACAEQIQAiBECEAIgQABECIEIARAiACAGQ5A8ZQPWe+CcPhQAAAABJRU5ErkJggg==" },
+  { id:8, name:"Oasis Coffee Menu", cat:"menu", desc:"Oasis Coffee Shop — Khobar coffee house digital menu", url:"https://rdstudiohub.github.io/Oasis-Coffee/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHC0lEQVR4nO3dwY0kJwBA0T/WZrFBOP8wHMTG0T5Y8snYwoKG6nnvuFoxNd2jLyQo+Hq9XgHf22+nHwA4TwgAIQCEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgOrHqoF+/vx91VBb/fr1xz/++6rnnx1/9/+f9ZTxbxvnlNHzzzIjAIQAEAIgIQASAiAhABICoIX7CEZWrXPO2r3uPftzV+0XWOXUOvyp9flVn+fT/55HzAgAIQCEAEgIgIQASAiAhADoDfsIRk6t88+Os3tdfff+glPnHaz6Xm7bjzBy29/zLDMCQAgAIQASAiAhABICICEAOriP4Dan1qV3/9xT+xduO2eBf2dGAAgBIARAQgAkBEBCACQEQPYR/O22ewdGVu0LWLV/4dS+g1W/l30HfzEjAIQAEAIgIQASAiAhABICoIP7CJ6yfnvbvQMju9fzd5+b8JR9HCO3Pc8sMwJACAAhABICICEAEgIgIQB6wz6C2+6xH3n6evXufQff7f+PPOXveZYZASAEgBAACQGQEAAJAZAQANXX6/U6/QxX2L2PYNX681PWvZ9+vsB3Y0YACAEgBEBCACQEQEIAJARAC88jWPV++MiqcWbHHzn1c0dOvW+/e/3/tnMHdo9z6vM3IwCEABACICEAEgIgIQASAqA33Guwyqn32G/b77D7fIHd6+S3ne/wlHsKdv+dmxEAQgAIAZAQAAkBkBAACQHQwnsNnrK+fWr83U7dC3Db/o5PPf9iNzMCQAgAIQASAiAhABICICEAWngewaeeGz9y27r97nFmzxe4bV/J7Din9qGc+rsyIwCEABACICEAEgIgIQASAqCF5xGMfOp747vXgXfvsxjZ/fueOsfhKfsddu9fGDEjAIQAEAIgIQASAiAhABICoIP3Gty2Pj9y2/nzn/qe/G37R3Y79fc/YkYACAEgBEBCACQEQEIAJARAziM4Ps7T3/+/bT/IU86nuO1+DTMCQAgAIQASAiAhABICICEAesM+glVuO+d/dvzb1v9Hnv55nnqeVeOfYkYACAEgBEBCACQEQEIAJARA9WPVQE85d2DV+Lfds7B738FT9nHcdt7BU+77MCMAhAAQAiAhABICICEAEgKgC88j+NT323ffa3DbfoRT6/mn3HaPxiwzAkAIACEAEgIgIQASAiAhAHrDeQQjo/XPT32/fZVT68yn7nfY/X7+qc/z1L0VI2YEgBAAQgAkBEBCACQEQEIAdPA8gt3rqLe9t39qP8J3O1/gtnsubvv8R8wIACEAhABICICEAEgIgIQAaOE+glP3Eaxy2zr2yKl7E0ZOjXPb57xqnN3f14gZASAEgBAACQGQEAAJAZAQAC2812B2/XP3ufer3LZuvNup/SC7v/dT5wLsXv9fxYwAEAJACICEAEgIgIQASAiAFu4juO2+91Pr9rPj3HYO/6zdn9up32tk9uc+Zd+BGQEgBIAQAAkBkBAACQGQEAAtvNdg5Lbz82ftPo9g1ThPuUdg9zkCt93LsJt7DYBlhAAQAkAIgIQASAiAhADoDecRrFrnvG39+VPtXg8/tS9gdvynPOcqZgSAEABCACQEQEIAJARAQgB04XkEt71/fur5bzsv4Cnr86ecOtfAeQTAMkIACAEgBEBCACQEQEIAtPA8glm3rUvvfg/ffoH/N85T3HYfxCwzAkAIACEAEgIgIQASAiAhALrwXoPbziOYtWq/wG3jj+zefzFr93kTq5zazzJiRgAIASAEQEIAJARAQgAkBEBvuNfglNvuF7jtffWnP+fs+Lftd7jtHAczAkAIACEAEgIgIQASAiAhAPrgfQSzTr2XPnLbPohVP3fWbedZzP7cU/tTZpkRAEIACAGQEAAJAZAQAAkB0BvuNbjNqff2P/U9+d3r26f2Ndy2r2Q3MwJACAAhABICICEAEgIgIQBauI9g5Cnv84/MPv/u98l3r+efGmfV93Xqe989/u7nMSMAhAAQAiAhABICICEAEgKgN+wjGLltvXf3Of+r9hecOof/KVadp7DKbfcXjJgRAEIACAGQEAAJAZAQAAkB0MF9BLc5dX7+yFOe59S+g1P3Suz+uac+TzMCQAgAIQASAiAhABICICEAso/gP+1en5+1ex179vfa/f93u+37dR4BcIwQAEIACAGQEAAJAZAQAB3cR3Db+fm3vd9+ym3vzz/lXIbZ/3/b925GAAgBIARAQgAkBEBCACQEQG/YR3Db++cju59zdt34u523f2p9ftXvddt9FrPMCAAhAIQASAiAhABICICEAKi+Xq/X6WcADjMjAIQAEAIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAqD6EwG75ze7X+PVAAAAAElFTkSuQmCC" },
+  { id:9, name:"Power Fitness Gym", cat:"fitness", desc:"Professional gym website — dark theme, Black/Red/Gold, full fitness platform", url:"https://rdstudiohub.github.io/power-fitness-gym/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHKElEQVR4nO3dwW0kNxCG0V+GstggnH8YDmLjaN/2ZBogUNVFjt47GkJrprX+QIDs6q/neQL8bH9NfwBgnhAAQgAIARAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQASPJddaFfv/6uulSr37//+c//vvr8VT+/0n2dld3v1W33+67cfh92Vd03KwJACAAhACIEQIQAiBAAEQIghecIVqr2OXdV7QN3X2fq3MGu7nMNVd+r+1zA7f+eV6wIACEAhACIEAARAiBCAEQIgLxwjmDlln3dqn3pW+Ya7Oqe43DLXIBb/j2vWBEAQgAIARAhACIEQIQAiBAAGTxHcJrufezu5/NXP797nVv287vnI/w0VgSAEABCAEQIgAgBECEAIgRAnCP445b5AlWfc/f3ds9l2DU1f+FTWREAQgAIARAhACIEQIQAiBAAGTxHcNp+b/dz/lX73qe9x+FT5xecdv1uVgSAEABCAEQIgAgBECEAIgRAXjhHcNp+8srt++RT5xp2TZ1T6J4TcTsrAkAIACEAIgRAhACIEAARAiDJ1/M805/ho1TtM0+dX5h678At5yA+lRUBIASAEAARAiBCAEQIgAgBkMJzBJ/6vPct++pVpuYyVF2/+zorp923XVYEgBAAQgBECIAIARAhACIEQF6YR/DT9m+7z1N86vP8p+2rT51f2L1+FSsCQAgAIQAiBECEAIgQABECIMl31YWm9s93r7Ny2vmFqfcanHbfdq+zq/v73nLuw4oAEAJACIAIARAhACIEQIQAyIHzCHZNzflfOe09CN1Oew5/ao7DFOcIgDJCAAgBIARAhACIEAARAiAvzCPYNfVc+mn7/6e9N+EWp93nKt3nF6wIACEAhACIEAARAiBCAEQIgLwwj2Blak7BT5vbf9p5hNPmBXSfH+n+vVWsCAAhAIQAiBAAEQIgQgBECIC8MI+gar90d9+4al+3aj9/9/5MPSffvR9+y/sCTrvPK95rAJQRAkAIACEAIgRAhACIEAB5YR7B1NyBKbd/31ue/68yNfehinMEQBkhAIQAEAIgQgBECIAIAZDCeQS7Tpu3v+u09zLc/pz/yu3fa2quxC4rAkAIACEAIgRAhACIEAARAiAvzCNYOW2ue/dz9bfvM69M/R277+ct97+KFQEgBIAQABECIEIARAiACAGQwnkEp81vv2XeftV9637Of/Xzp53jmNr/v/1cgxUBIASAEAARAiBCAEQIgAgBkMJzBFPPk+9+nt3rnPa8/dT5iKn3TZx2HqTq389pcw2sCAAhAIQAiBAAEQIgQgBECIC8MI+ge47A7nWq9m+nzins/t6q+zC17111n2/Xff+tCAAhAIQAiBAAEQIgQgBECIAMziOY+r3dz7d3z6Wvep6/ex9+6n0NK7f8Xab+P7IiAIQAEAIgQgBECIAIARAhAJJ8Pc9TcqHuefWnOW1+/i2fp3u/vfu+3f75V6wIACEAhACIEAARAiBCAEQIgLxwjmCl+3zB1PsUpvbzu/fDq5x2n087/2IeATBGCAAhAIQAiBAAEQIgQgCk8L0GK1XvBdg19Vx61c+vTD0/X+W0+9y9b3/aezdWrAgAIQCEAIgQABECIEIARAiADM4j2DX1nPZp71847ZzFLXMout9HsHLauYYVKwJACAAhACIEQIQAiBAAEQIgL8wj2DW1Dzx1DmLqe03tV6+c9nlWus9NmEcAjBECQAgAIQAiBECEAIgQAHlhHsHU8+dVftrz9ru/t8rU5z9tTsHUeRArAkAIACEAIgRAhACIEAARAiAHniO4/eendL/voHuef5Vb/l5VnCMAyggBIASAEAARAiBCAEQIgBSeI7jdLfMUnHf4f1NzFk6bL7DLigAQAkAIgAgBECEAIgRAhABI8l11odP2q1eq9mmr9v9vef7/tP32larrdO/zd58f2WVFAAgBIARAhACIEAARAiBCAKTwHMHK1PPV3fvqu/u6U3MHpp7/7/69p82JqDJ1P60IACEAhACIEAARAiBCAEQIgLxwjmDllv3e7ufYp95TcNp7HKbmWZw2R2PqnIgVASAEgBAAEQIgQgBECIAIAZDBcwS3293vnTo3ccucgtPea7B7/ZVb5kpYEQBCAAgBECEAIgRAhACIEABxjuCP7nMBVdev2k+eei9D1c/vOu3cRPeci11WBIAQAEIARAiACAEQIQAiBEAGzxFMvX9+V9X++dT7CFa67//U57n9PMIUKwJACAAhACIEQIQAiBAAEQIgL5wjOO398ytT+/NVcw2qfr57zsJp8/y750Sc9l6GFSsCQAgAIQAiBECEAIgQABECIMnX8zzTnwEYZkUACAEgBECEAIgQABECIEIARAiACAEQIQAiBECEAIgQABECIEIARAiACAEQIQAiBECEAIgQABECIEIAJPkX6+PcZutFGbsAAAAASUVORK5CYII=" },
+  { id:10, name:"Sultan Perfumes", cat:"retail", desc:"Sultan Perfumes — 50 premium fragrances catalog, bilingual showcase", url:"https://rdstudiohub.github.io/Sultan-Perfumes/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHJ0lEQVR4nO3d240sNRRA0X0RWRAE+YdBEMTRRFBCRnYf17DW96im56EtS3Yd//p8PgH/b79NfwBgnhAAQgAIAZAQAAkBkBAACQGQEAAJAZAQAAkBkBAACQGQEAAJAZAQAAkBkBAACQGQEAAJAZAQANXvux70xx9/7nrUUX///dfS15/+uXZ9ntXn7HL68+z6/d/2d99l1+/ZigAQAkAIgIQASAiAhABICIA2niN4ctv+9qqnz79r/3zX57xtP/+2ffhdv5+3/z8/sSIAhAAQAiAhABICICEAEgKgL5wjeDL1nvmT2/a9T59HWN1XXz1Pser0z3t6//+2/+dVVgSAEABCACQEQEIAJARAQgA0eI7g7XbNKdi1bzw1N+H0+YLbznf8VFYEgBAAQgAkBEBCACQEQEIA5BzBdlP782+5T+G2+QVT7//fxooAEAJACICEAEgIgIQASAiABs8RvGX/dtd+/q597F3781P3Qez6/LfNKXjL//MTKwJACAAhABICICEAEgIgIQD6wjmC2/Z732Lq3MHbz024Z+G/sSIAhAAQAiAhABICICEAEgKgjecI3v4+9pOp/fNVp/fPn0w9f+r8wk9lRQAIASAEQEIAJARAQgAkBED16/P5bHnQ1Pvhq07P87/t/fnVn/ctcwpOn9d4+//nKisCQAgAIQASAiAhABICICEA2niOYJep9/mnvGUf/vS5htXn3/acVbfNs7AiAIQAEAIgIQASAiAhABICoC+cI9i1r3v6+z6Z2s/f5fR++0/1U+dNPLEiAIQAEAIgIQASAiAhABICoMF7DXY9/8lb3uf/qfP83/JzTZ37uO33Y0UACAEgBEBCACQEQEIAJARAg/caTN0//xa33S9weh7Bbfvzb+EcAbCNEABCAAgBkBAACQGQEAANniNYNTWPYGpffdVb5uqbBzH7/CdWBIAQAEIAJARAQgAkBEBCAPSicwRPpt7PX33OLm/Zh3/7Pv/pOQW3/b9ZEQBCAAgBkBAACQGQEAAJAVD9PvWNT78/f3o//7b98NWvn/r97Pr61f+HqfsLbptb8cSKABACQAiAhABICICEAEgIgDaeI7ht/v/UnIKp/fC3vLd/+hzE6c+z+pwnU+canlgRAEIACAGQEAAJAZAQAAkB0OC9BlNz459MzUfwnvx/85bzAk9um69hRQAIASAEQEIAJARAQgAkBEBfuNfg9Hz+1e/7ZOq8wG2/h9XnnD4fMbVvv/qc0/v8p7+vFQEgBIAQAAkBkBAACQGQEABtnEdwep/ztvfGb3uf/7ZzCredj7jt3oep5zyxIgCEABACICEAEgIgIQASAqAvzCNY9fb97dXP82T1+56eCzA1j+D0vQ9v+ZzuNQCOEwJACAAhABICICEAEgKgjfMInkztz0+dF1g1df/CaW+/3+H/Ns/CigAQAkAIgIQASAiAhABICIA2ziOY2i99+/vwq96yD/9kar7DLrfNR3CvAbCNEABCAAgBkBAACQGQEAB94V6DqXsKbrvH/slPnYNw+h6E08/Z5ba5A0+sCAAhAIQASAiAhABICICEAOgL5whO76Oefk9+1/mFqfkIU/vYt81HOP33XXXb39GKABACQAiAhABICICEAEgIgAbnEazatQ88NQ//9L761Hv+U19/23yEJ7v+jqdZEQBCAAgBkBAACQGQEAAJAVD9+nw+Wx60az989fmrpva9n0zN/z/9eU7/3afmXLzlfMoqKwJACAAhABICICEAEgIgIQB60TmCXd936j3z0/vMt53XeHLbeYQnt813OM2KABACQAiAhABICICEAEgIgL5wr8GTXfuxU/u9U3MBVr/+9L706fMat51P2fWc284XWBEAQgAIAZAQAAkBkBAACQHQxnMEt90Df3qe/+pzdpmas/BT38O/bY6DeQTAGCEAhAAQAiAhABICICEA2niOYOp++FVTcw1Wvf09/9vOC6za9flvu1/jiRUBIASAEAAJAZAQAAkBkBAAfeFeg6l946l7AU6/t7/LbXMNpuZHPJk6TzF1HseKABACQAiAhABICICEAEgIgL5wjuDJbe9jP1ndBz69H37b/QtT9x3s2od/+3mNXawIACEAhABICICEAEgIgIQAaPAcwdvdtg98+rzDabfNR9j1nLfc72BFAAgBIARAQgAkBEBCACQEQM4R/Kup+QKn959Pz0GYOmcxda/BbXMxVlkRAEIACAGQEAAJAZAQAAkB0OA5gtvex377PvDp50/NCzht6tzEbf//VgSAEABCACQEQEIAJARAQgD0hXMEt83/f7JrH3jX/IJd33fqfMGT1fkLu0zNTTj9/7CLFQEgBIAQAAkBkBAACQGQEADVr8/nM/0ZgGFWBIAQAEIAJARAQgAkBEBCACQEQEIAJARAQgAkBEBCACQEQEIAJARAQgAkBEBCACQEQEIAJARAQgBU/wBImuLmEPmxmQAAAABJRU5ErkJggg==" },
+  { id:11, name:"Amwaj Perfume", cat:"retail", desc:"Amwaj Perfume — luxury fragrance market, digital catalog", url:"https://rdstudiohub.github.io/Amwaj-Perfume/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHRUlEQVR4nO3dTaocRxCF0fuMd6FFeP/L8CK0jvJAoJFzkBDREaV3zlCI6lap+UjIv6/neQJ8b39NfwFgnhAAQgAIARAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQASPJ31YN+/Pin6lGtfv7893///Pb7n55zUvX8qvfc/fxbt+/zZNt77lb13owIACEAhACIEAARAiBCAEQIgBSuIzipmue8NTXf3v3v3TbfXvX8qvc5tf6iW/e6BiMCQAgAIQAiBECEAIgQABECIB9YR3DylnndqfUCJ1Xz/1Xz7bfvp+rvb/OW3/OJEQEgBIAQABECIEIARAiACAGQwXUE20zN396qOhege31Bt+7zEb4bIwJACAAhACIEQIQAiBAAEQIg1hH81r1Pfmp+ftv3776X4S3rQbYxIgCEABACIEIARAiACAEQIQAyuI5g23xv1Tn8b//ck7ffR9D9e9v2e75lRAAIASAEQIQAiBAAEQIgQgDkA+sIts0nn1TNk0+tC9j2fU663+dJ1b/3Lb/nW0YEgBAAQgBECIAIARAhACIEQArXEbx9P/a28/ar/n7VvPd3+/99+7/3lhEBIASAEAARAiBCAEQIgAgBkOTreZ6SB/2p+72/27n9U/cXVD2/+zkn297bLSMCQAgAIQAiBECEAIgQABECIB+412DK1Pz/1D0IU/PS3esXqnSvZ3nL/RcnRgSAEABCAEQIgAgBECEAIgRABtcRTO0Pr3p+1eeeTO3P37Zv//Y5t7b9TqbWFxgRAEIACAEQIQAiBECEAIgQACm814Bfus8R2HbPwrbzEd5+7sPUugYjAkAIACEAIgRAhACIEAARAiCF5xFMzd9279+eek73eQFT5+d3e8vvZ2r9wokRASAEgBAAEQIgQgBECIAIAZDCdQRV85/b9rFX2bYfvsq29SBv+f1sW69hRAAIASAEQIQAiBAAEQIgQgBk4XkEJ1Pz6rfzvVPz4VXz0t2f+6euj9j2/FtGBIAQAEIARAiACAEQIQAiBECSr+d5Sh70lv38J9vWI2ybZz55+z787vMLps5HuGVEAAgBIARAhACIEAARAiBCAKTwPIIqU+fhT+3nr3r+W+ax33IOxa3u32c3IwJACAAhACIEQIQAiBAAEQIghesIquZ7t+0Pf/s9Bdv2/590/3vfPs/fzYgAEAJACIAIARAhACIEQIQASOE6gu77Bab2pU/te59ap/CWcxy2zf93f273840IACEAhACIEAARAiBCAEQIgCRfz/NMf4ePmloXULWeYtvnTq0TmVoXcMs6AuA1hAAQAkAIgAgBECEAIgRACs8jOJmal64yda/B7ffptu1zp9aDVJk69+HEiAAQAkAIgAgBECEAIgRAhADIwnsNbnWvO6j6+1Xz4d9tP3/3+ovu+zjewogAEAJACIAIARAhACIEQIQAyAfOIzjpng/vnh+umoffdu/A1D0Ft26fP/V76H4/7jUAyggBIASAEAARAiBCAEQIgBSuI+ierz7Ztp98ah74VtV76/5/vDW1TmTbuRW3jAgAIQCEAIgQABECIEIARAiADN5rUHU/fNX+86n5227b5qu33UOx7d6NKUYEgBAAQgBECIAIARAhACIEQAbvNbg1NT/cPQ9ctd7hpPv8/KlzHLrXR0ydU1D1/37LiAAQAkAIgAgBECEAIgRAhADIB9YRTO1vn/rcqnnmP3XdxLbPvdV9/8LU/7sRASAEgBAAEQIgQgBECIAIAZAPrCOYmt/u3jfe/ZyTqnsiTrrPR6j63O7zFLr//snUuhgjAkAIACEAIgRAhACIEAARAiDJ1/M8JQ+aOgd+m+55+6r3fPt9TqbmvU+2fZ+TbecvGBEAQgAIARAhACIEQIQAiBAAKVxH8Hbd59VPfe62dQHd8+dT9wJMnVNQxYgAEAJACIAIARAhACIEQIQASOG9Btv2e59s2wdete6g+16Gt8+33z6n+z10n1txy4gAEAJACIAIARAhACIEQIQASOE6gpOpeftt5wt0n1Ow7T13f5+3n5twMrUex4gAEAJACIAIARAhACIEQIQAyAfWEZy8Zb5327qA2/MIbp8zNT8/NX/uHI1fjAgAIQCEAIgQABECIEIARAiADK4jeItt+96nztW/dbtOYdu9BrfPvzV1jsOJEQEgBIAQABECIEIARAiACAEQ6wh+m9q3331/QdV8dff5C93nAny3dRO3jAgAIQCEAIgQABECIEIARAiADK4jmNp3fatqvr17X/229zl1zsJb1iNsu0/BiAAQAkAIgAgBECEAIgRAhADIB9YRbJsvPXnLPQXbzhHoPsehe33E7ffp/p7d9zKcGBEAQgAIARAhACIEQIQAiBAASb6e55n+DsAwIwJACAAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQAiBAAEQIgQgBECIAIARAhACIEQIQAiBAAEQIgyX/YiMWEBJl2awAAAABJRU5ErkJggg==" },
+  { id:12, name:"Basateen Al Dammam", cat:"business", desc:"Basateen Al Dammam — business listing & service information", url:"https://rdstudiohub.github.io/Basateen-Al-Dammam/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHFUlEQVR4nO3dwY1juRVA0dtGZzFBOP8wHMTEIe+8Mm1wQIrk1DnLRuFLpVJfEOD7/L8+n0/Az/aP028AOE8IACEAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICIDq96oL/fHHP1ddaqs///zXf/33Ve9/9vqjn99t9v2c+nxeuc4pq74/VgSAEABCACQEQEIAJARAQgC0cI5g5LZ98lmz+8yzr7t7vmD3vMDuz2eVVZ/n69/nESsCQAgAIQASAiAhABICICEA+sIcwcjuff5V11m1D7/7vvfb3ufuOYjbzgu47fs8y4oAEAJACICEAEgIgIQASAiADs4R3Ob1cwROzUGMnHqOw6l9+NdZEQBCAAgBkBAACQGQEAAJAZA5gv9YtU9+2337q35+9jq75w5u+/xfZ0UACAEgBEBCACQEQEIAJARAB+cIXtm/3X1e/e779k/NR8w69fmsctv7mWVFAAgBIARAQgAkBEBCACQEQF+YI7jtOfYju8//P/V8gZHb3v9tPz/yyvd5lhUBIASAEAAJAZAQAAkBkBAA1a/P53P6PVxh1b70yKn71U/te79+vsBPY0UACAEgBEBCACQEQEIAJARAC88jOLUPv/u5A6t+/u96v/3u/f/bPodTf/eRVZ+/FQEgBIAQAAkBkBAACQGQEAB94TyCn3ae/yqn5iNmnfp7zbpt3/62eQ0rAkAIACEAEgIgIQASAiAhALrwPILX959Pnb9w2z75Krd9Dq/Md8yyIgCEABACICEAEgIgIQASAqAvnEcw69T9/6u88vyCkVPPR5j1yvMFXpnjsCIAhAAQAiAhABICICEAEgKghXMEr58Pf2r/f9bu/fNT19lt99/llFX/j6wIACEAhABICICEAEgIgIQA6MI5gtvOjT91XsBtcxm775O/7fuz223nF1gRAEIACAGQEAAJAZAQAAkB0MHnGvxd7/8feeX3nfXK8xd2fx9OPTdhFSsCQAgAIQASAiAhABICICEAch7BX37d284jWOW2cxNu259//fojVgSAEABCACQEQEIAJARAQgD00HkEs9cZ2b3//Mq5+iO3zUfsvg9/5LbzIJxHAGwnBIAQAEIAJARAQgAkBEBfmCO4bZ9/ld3PKdj9fmavM+u232u317/nVgSAEABCACQEQEIAJARAQgBUv0+98O77uk/tq5+aF9ht9/MIZl/3lfMRbpt3GLEiAIQAEAIgIQASAiAhABICoIVzBKeeY3/bffi7vfJ77f577Z5DWfX+d/++q1gRAEIACAGQEAAJAZAQAAkB0BfOIzg1L/DK/fAju+cyRnafO7D773vK6983KwJACAAhABICICEAEgIgIQD6whzB7n3pV/bbR3bvh89+DrvP+T91f/4rcxarXneWFQEgBIAQAAkBkBAACQGQEADVr8/ns/UFdu9Lz77ubefhn7r+T3s+wm3P0biNFQEgBIAQAAkBkBAACQGQEABdOEcw69S5AKfmHVZdZ/frjrxy/VfOO1jFigAQAkAIgIQASAiAhABICIC+MEcwsvu+7tfPsb9t//y28whGXjl34La5AysCQAgAIQASAiAhABICICEAunCOYJXb9sNn3XY//O79+dnr3OaV+ZERKwJACAAhABICICEAEgIgIQA6+FyD2+6fX3Vf+ivn5N92/VfmBUZeeX7HiBUBIASAEAAJAZAQAAkBkBAALZwjOHVO/ivnzJ+6/u7951f+jrvnREacRwA8QwgAIQCEAEgIgIQASAiAHnquwU/b1z31e90293Hqe7LKK+c1WBEAQgAIAZAQAAkBkBAACQFQ/T71wqv2RW/bt999LsBt8wKz1zH38b+der6DFQEgBIAQAAkBkBAACQGQEAAtnCM4db/3rFP7tCOzn9vuz3nVXMAr8x2zr3vbcyI81wBYRggAIQCEAEgIgIQASAiAvnAewal9+9vmGnbfr75q3/vUdVZ9Pq+cC3DbPIsVASAEgBAACQGQEAAJAZAQAB18rsFt+72n9o1P3Sd/6n773XY/Z2HWqedKzLIiAIQAEAIgIQASAiAhABICoINzBLdZta++e67h1HMQbps7WHUuw+7nJtw2LzBiRQAIASAEQEIAJARAQgAkBEDmCP6vVfvDo59fNaew6n3unlO47XkTp56zsPt1Z1kRAEIACAGQEAAJAZAQAAkB0ME5gtvOzz/1XIBT96W/8hyE3ecFzDp1fsFuVgSAEABCACQEQEIAJARAQgBUvz6fz5IL3Xaf+cipc+Z3zx3s3j+/bV5g5NS+/anv/6r3b0UACAEgBEBCACQEQEIAJARAC+cIgHdZEQBCAAgBkBAACQGQEAAJAZAQAAkBkBAACQGQEAAJAZAQAAkBkBAACQGQEAAJAZAQAAkBkBAACQFQ/RuMKAb/wwUolwAAAABJRU5ErkJggg==" },
+  { id:13, name:"Hotel QR", cat:"business", desc:"Hotel QR solution — smart QR code system for hospitality", url:"https://rdstudiohub.github.io/Hotel/", qr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAIAAACZDnMXAAAHC0lEQVR4nO3d0W0cNxRA0evAXaSI9F9GinAdmwbCADRIkVTO+TSE2dFqfUGAbzk/Pp9PwP/bH6dvADhPCAAhAIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiA6ueqC/3551+rLrXVr19//+u/777/0euOzN7P7PVve93bvP55nmVFAAgBIARAQgAkBEBCACQEQAvnCEZO7TPfth++6n5G1xn9+6rfa/ccxKrXHVn1/rzyeZ5lRQAIASAEQEIAJARAQgAkBEBfMEcwcts+86zZfend+/mz8wWz1x9ZtT8/e5+3nRfw+ufZigAQAkAIgIQASAiAhABICIAOzhHcZtU+8KnnI7x+XsDIbfMC35UVASAEgBAACQGQEAAJAZAQAJkj+DZe2W8/dX4B/82KABACQAiAhABICICEAEgIgA7OEZw6v32V2ecLzF5nZHYfftXPj8ze/6r7vG3u4PXPsxUBIASAEAAJAZAQAAkBkBAAfcEcwevfGz+1P39qXuDU/c/aff3Z132dFQEgBIAQAAkBkBAACQGQEADVj8/nc/oervBd94d379vPvu5t8w6vnyOwihUBIASAEAAJAZAQAAkBkBAALTyP4Lbvn78yF3Bq/3zku+7D3/Y52f08i1lWBIAQAEIAJARAQgAkBEBCALTwPIJV+7G7v2d+6nv1p+z+u8y+7m3nFOz++556/2dZEQBCAAgBkBAACQGQEAAJAdDC8whu2189dR7+K/vbp9y2r35qXuC2v5cVASAEgBAACQGQEAAJAZAQAB08j+C2ffiRV1531uvn/K+y+/e97fkFI1YEgBAAQgAkBEBCACQEQEIAtHCOYNYr++G37W/f9j353fd56nkKI7s/D6fux4oAEAJACICEAEgIgIQASAiAFj7XYOS2c/537zOPzO733rZ/vsqp5zjs/p7/bfMIs6wIACEAhABICICEAEgIgIQA6AvmCHbvl+7ef171uqfOq39lH37ktvdn1fzFbXMHVgSAEABCACQEQEIAJARAQgD00HMNbvve+Cv787vPHTh1joPPz1pWBIAQAEIAJARAQgAkBEBCALRwjuDU/uru/eTbzhEYue33uu35Ea8//2L338uKABACQAiAhABICICEAEgIgL5gjuDUvu4pp84p2D3HMevUPMKq669y23zHiBUBIASAEAAJAZAQAAkBkBAAfYPnGrxyDsKsU3MHr8xx3PZcg1fmBUasCAAhAIQASAiAhABICICEAOjC8whGXj9vf+S7Ph9h9vrf9e9y2/kOI1YEgBAAQgAkBEBCACQEQEIA9NAcwSq3Pd9+t9vuZ+SVcw1GXjnHYcSKABACQAiAhABICICEAEgIgOrnqRd+/bz9V74nf+rch5FV78+p93n0urs/h7uvb0UACAEgBEBCACQEQEIAJARAB+cIZveBd//8bd8PXzU3sXve4bbrjOyev1h1nVOfQysCQAgAIQASAiAhABICICEAeug8gtnrjHzX8/xXzRescuq8id3zJrNWnWuwmxUBIASAEAAJAZAQAAkBkBAAHZwjWOW2uYPd+9unnqdw6vkRs1bdz21zCrvfZysCQAgAIQASAiAhABICICEAqh+fz2fJhU7t5586j8Dr/t71d89BnDoHYcRzDYBnCAEgBIAQAAkBkBAACQHQwjmCWa/v076yPz9y2/7/rNs+J6/MC4xYEQBCAAgBkBAACQGQEAAJAdBDcwTOO/i9679y/7ftq992foTnGgDbCQEgBIAQAAkBkBAACQHQwecarPLKufSv7J+P3DZfcOrzNuuVcw2sCAAhAIQASAiAhABICICEAKh+rrrQbfvhr8wLeN3f+/lVbnvOxSlWBIAQAEIAJARAQgAkBEBCALRwjuCVfdTd8w63nUew+1yG3fvwp/b5bzs/wnMNgO2EABACQAiAhABICICEAGjhHMHIqX3X3d+3X2XVfc7e/6nfa9X7vHuf/9T8wqn/L1YEgBAAQgAkBEBCACQEQEIA9AVzBCOr9rFPfR/+1PkLs/d52/kIs26b4zhl99/LigAQAkAIgIQASAiAhABICIAOzhHc5rbvsc/aPV8wa/Z9uO15E6uuv4rnGgDbCQEgBIAQAAkBkBAACQGQOYLldj9PYXY/+fXzC069n7t/39ued2BFAAgBIARAQgAkBEBCACQEQAfnCG47P39k9/fVT13/tvmC2+YUVt3/K6wIACEAhABICICEAEgIgIQAqH58Pp8lF3plH/XU99VPvT+n7mfV69523sHIqc/JqvfHigAQAkAIgIQASAiAhABICIAWzhEA77IiAIQAEAIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAiAhABICICEAEgIgIQASAqD6B984x5dHG6N1AAAAAElFTkSuQmCC" }
+];
+
+function renderPortfolio(filter = 'all') {
+  const grid = document.getElementById('portfolioGrid');
+  const filtered = filter === 'all' ? projects : projects.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <div class="portfolio-item reveal" data-cat="${p.cat}">
+      <div class="portfolio-thumb">
+        <img src="${p.qr}" alt="QR Code for ${p.name}" class="qr-code-img" loading="lazy">
+      </div>
+      <div class="portfolio-body">
+        <div class="category-badge">${p.cat}</div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="portfolio-links">
+          <a href="${p.url}" target="_blank"><i class="fas fa-external-link-alt"></i> Live Site</a>
+          <a href="${p.url}" target="_blank"><i class="fas fa-qrcode"></i> Scan QR</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  // Re-trigger reveal for newly rendered items
+  setTimeout(observeReveal, 100);
+}
+
+// ===== FILTER =====
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderPortfolio(this.dataset.filter);
+  });
+});
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+  const bt = document.getElementById('backTop');
+  bt.classList.toggle('visible', window.scrollY > 500);
+});
+
+// ===== HAMBURGER =====
+document.getElementById('hamburger').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('hamburger').classList.remove('active');
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// ===== SCROLL REVEAL =====
+function observeReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+
+// ===== PARTICLES =====
+function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let w, h;
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for(let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+      r: Math.random() * 2 + 0.5, a: Math.random() * 0.5 + 0.1
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0) p.x = w; if(p.x > w) p.x = 0;
+      if(p.y < 0) p.y = h; if(p.y > h) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(123, 47, 247, ${p.a})`;
+      ctx.fill();
+    });
+    // Connect nearby particles
+    for(let i = 0; i < particles.length; i++) {
+      for(let j = i+1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 150) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(123, 47, 247, ${0.06 * (1 - dist/150)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  // First render portfolio, then init particles, then hide loader
+  renderPortfolio('all');
+  initParticles();
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 600);
+  setTimeout(observeReveal, 200);
+});
+</script>
+</body>
+</html>
