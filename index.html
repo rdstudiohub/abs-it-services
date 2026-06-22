@@ -195,6 +195,16 @@ nav .wrapper{display:flex;align-items:center;justify-content:space-between}
 .video-placeholder-icon{font-size:3rem;color:rgba(123,47,247,0.3);margin-bottom:20px}
 .video-placeholder h3{font-size:1.2rem;color:#999;margin-bottom:8px}
 .video-placeholder p{color:#666;font-size:0.9rem}
+.video-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;transition:all 0.4s}
+.video-card:hover{transform:translateY(-4px);border-color:rgba(123,47,247,0.3);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.video-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000}
+.video-card-body{padding:14px 18px 18px}
+.video-card-body h4{font-size:0.95rem;font-weight:600;color:#ddd;margin-bottom:4px}
+.video-card-body p{font-size:0.8rem;color:#888}
+.video-card .play-overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);opacity:0;transition:opacity 0.3s;pointer-events:none}
+.video-card:hover .play-overlay{opacity:1}
+.video-card .play-overlay i{font-size:3rem;color:rgba(255,255,255,0.8);text-shadow:0 4px 20px rgba(0,0,0,0.5)}
+.video-thumb-wrap{position:relative;overflow:hidden}
 .portfolio-item{
   background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);
   border-radius:20px;overflow:hidden;transition:all 0.4s;
@@ -503,14 +513,88 @@ footer .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font
     <div class="section-header reveal">
       <div class="section-label"><i class="fas fa-play-circle"></i> Video Gallery</div>
       <h2>Video <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Portfolio</span></h2>
-      <p>Promotional &amp; business videos — coming soon</p>
+      <p>Promotional &amp; business videos — click to play</p>
     </div>
     <div class="video-grid" id="videoGrid">
-      <!-- Videos will appear here when uploaded -->
-      <div class="video-placeholder reveal">
-        <div class="video-placeholder-icon"><i class="fas fa-video"></i></div>
-        <h3>Videos Coming Soon</h3>
-        <p>Send your videos and I'll add them here</p>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-1.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>IT Solutions Demo</h4>
+          <p>ABS IT Services — Promotional</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-2.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>IT Solutions Showcase</h4>
+          <p>ABS IT Services — Presentation</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-3.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>Service Overview</h4>
+          <p>ABS IT Services — Feature</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-4.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>Digital Solutions</h4>
+          <p>ABS IT Services — Video</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-5.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>Tech Portfolio</h4>
+          <p>ABS IT Services — Clip</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-6.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>Business Solutions</h4>
+          <p>ABS IT Services — Showcase</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-7.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>IT Services Reel</h4>
+          <p>ABS IT Services — Demo</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb-wrap">
+          <video src="videos/abs-video-8.mp4" muted playsinline preload="metadata"></video>
+          <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+        </div>
+        <div class="video-card-body">
+          <h4>Creative Works</h4>
+          <p>ABS IT Services — Portfolio</p>
+        </div>
       </div>
     </div>
   </div>
@@ -752,6 +836,32 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loader').classList.add('hidden');
   }, 600);
   setTimeout(observeReveal, 200);
+  
+  // ===== VIDEO CLICK TO PLAY =====
+  document.querySelectorAll('.video-card').forEach(card => {
+    const video = card.querySelector('video');
+    card.addEventListener('click', () => {
+      if (video.paused) {
+        video.muted = false;
+        video.play();
+        video.setAttribute('controls', '');
+      } else {
+        video.pause();
+        video.removeAttribute('controls');
+      }
+    });
+    video.addEventListener('play', () => {
+      video.setAttribute('controls', '');
+    });
+    video.addEventListener('pause', () => {
+      if (video.currentTime === 0 || video.ended) {
+        video.removeAttribute('controls');
+      }
+    });
+    video.addEventListener('ended', () => {
+      video.removeAttribute('controls');
+    });
+  });
 });
 </script>
 </body>
