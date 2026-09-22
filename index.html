@@ -330,6 +330,38 @@ footer .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font
 .loader-spinner{width:50px;height:50px;border:3px solid rgba(255,255,255,0.05);border-top-color:#7b2ff7;border-radius:50%;animation:spin 0.8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loader p{font-size:0.85rem;color:#555;font-weight:500}
+
+/* ===== SOFTWARE CATALOG ===== */
+.catalog-tools{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-bottom:18px}
+.catalog-search{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:#ddd;
+  padding:13px 22px;border-radius:50px;font-size:0.86rem;min-width:340px;outline:none;font-family:inherit}
+.catalog-search::placeholder{color:#666}
+.catalog-search:focus{border-color:#7b2ff7;background:rgba(123,47,247,0.06)}
+.catalog-count{font-size:0.8rem;color:#777}
+.catalog-filter{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.catalog-filter .filter-btn{padding:8px 18px;font-size:0.76rem}
+.sw-group{margin-bottom:14px}
+.sw-group.sw-hidden{display:none}
+.cat-group-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;color:#e6e6e6;
+  margin:34px 0 16px;display:flex;align-items:baseline;gap:10px}
+.cat-group-title span{font-size:0.76rem;color:#666;font-weight:400;font-family:inherit}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px}
+.sw-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:16px;
+  padding:20px;transition:all 0.35s}
+.sw-card:hover{transform:translateY(-4px);border-color:rgba(123,47,247,0.25);background:rgba(255,255,255,0.045)}
+.sw-card.sw-hidden{display:none}
+.sw-cat{display:inline-block;font-size:0.62rem;letter-spacing:0.7px;text-transform:uppercase;color:#b388ff;
+  background:rgba(123,47,247,0.12);border:1px solid rgba(123,47,247,0.25);padding:3px 10px;
+  border-radius:50px;margin-bottom:10px}
+.sw-card h4{font-size:1rem;color:#fff;margin-bottom:3px;font-weight:600}
+.sw-card .sw-vendor{font-size:0.72rem;color:#666;margin-bottom:9px;letter-spacing:0.3px}
+.sw-card p{font-size:0.82rem;color:#8d8d8d;line-height:1.65;margin:0}
+.sw-card .sw-ksa{margin-top:11px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.05);
+  font-size:0.74rem;color:#6bcb77;line-height:1.55}
+.sw-card .sw-ksa i{margin-right:5px}
+.catalog-empty{text-align:center;color:#666;padding:30px;font-size:0.9rem;display:none}
+.catalog-empty.show{display:block}
+/* ===== /SOFTWARE CATALOG ===== */
 </style>
 </head>
 <body>
@@ -354,6 +386,8 @@ footer .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#industrial-software">Industrial</a></li>
+      <li><a href="#finance-software">Finance</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#video-gallery">Videos</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -437,54 +471,1539 @@ footer .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font
 </section>
 
 <!-- SERVICES -->
+<!-- SERVICES-CATALOGS-START -->
 <section id="services">
   <div class="wrapper">
     <div class="section-header reveal">
       <div class="section-label"><i class="fas fa-cogs"></i> What We Do</div>
       <h2>Our <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Services</span></h2>
-      <p>Complete IT solutions tailored for your business</p>
+      <p>Complete IT, industrial software and finance systems — tailored for businesses in Saudi Arabia</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal" style="--accent:#00d2ff">
-        <div class="service-icon" style="background:rgba(0,210,255,0.1);color:#00d2ff"><i class="fas fa-globe"></i></div>
-        <h3>Website Development</h3>
-        <p>Responsive, modern websites — business sites, landing pages, e-commerce &amp; portals. Built with speed &amp; SEO in mind.</p>
+        <div class="service-icon" style="background:#00d2ff1a;color:#00d2ff"><i class="fas fa-globe"></i></div>
+        <h3>Website &amp; Web App Development</h3>
+        <p>Business websites, landing pages, e-commerce, portals and web applications — responsive, fast, Arabic/English ready and built for Google. Hosting, domain and SSL handled end to end.</p>
         <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal" style="--accent:#7b2ff7">
-        <div class="service-icon" style="background:rgba(123,47,247,0.1);color:#b388ff"><i class="fas fa-code"></i></div>
-        <h3>Software Development</h3>
-        <p>Custom software solutions, automation tools, data pipelines &amp; business management systems for any industry.</p>
+        <div class="service-icon" style="background:#7b2ff71a;color:#7b2ff7"><i class="fas fa-code"></i></div>
+        <h3>Custom Software &amp; Automation</h3>
+        <p>Tailored business software, dashboards, internal tools, API integrations and workflow automation built for your exact process — from invoice automation to production reporting.</p>
         <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal" style="--accent:#ff6b6b">
-        <div class="service-icon" style="background:rgba(255,107,107,0.1);color:#ff6b6b"><i class="fas fa-utensils"></i></div>
-        <h3>Online Menu Design</h3>
-        <p>Bilingual Arabic/English digital menus with QR access. Restaurant, cafe, juice bar &amp; food truck menus — fully responsive.</p>
-        <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
+        <div class="service-icon" style="background:#ff6b6b1a;color:#ff6b6b"><i class="fas fa-industry"></i></div>
+        <h3>Industrial Software &amp; Plant IT</h3>
+        <p>SCADA, DCS, HMI, MES, historian, CMMS/EAM and IoT platforms — implementation, integration, dashboards and support for factories, plants and utilities across the Kingdom.</p>
+        <a href="#industrial-software" class="service-link">Browse 60+ Platforms <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal" style="--accent:#ffd93d">
-        <div class="service-icon" style="background:rgba(255,217,61,0.1);color:#ffd93d"><i class="fas fa-video"></i></div>
-        <h3>Video Generation</h3>
-        <p>Professional video production — promotional, business explainers, social media reels &amp; AI-powered video content.</p>
-        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+        <div class="service-icon" style="background:#ffd93d1a;color:#ffd93d"><i class="fas fa-calculator"></i></div>
+        <h3>Accounting, Finance &amp; ERP Systems</h3>
+        <p>Accounting and ERP implementation, ZATCA (Fatoora) e-invoicing compliance, VAT, payroll &amp; WPS, GOSI and reporting — cloud or on-premise, Arabic and English.</p>
+        <a href="#finance-software" class="service-link">Browse 60+ Systems <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal" style="--accent:#6bcb77">
-        <div class="service-icon" style="background:rgba(107,203,119,0.1);color:#6bcb77"><i class="fas fa-paint-brush"></i></div>
-        <h3>Graphic Design</h3>
-        <p>Logo design, branding, social media graphics, flyers, brochures &amp; all visual identity materials for your business.</p>
-        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+        <div class="service-icon" style="background:#6bcb771a;color:#6bcb77"><i class="fas fa-utensils"></i></div>
+        <h3>Online Menu &amp; QR Solutions</h3>
+        <p>Bilingual Arabic/English digital menus with QR access, table ordering and instant updates — restaurants, cafes, juice bars, hotels, salons and retail catalogues.</p>
+        <a href="#portfolio" class="service-link">View Projects <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-card reveal" style="--accent:#ff8a5c">
-        <div class="service-icon" style="background:rgba(255,138,92,0.1);color:#ff8a5c"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Google Map Ranking</h3>
-        <p>Local SEO &amp; Google Business Profile optimization to rank your business higher on Google Maps &amp; local search.</p>
+        <div class="service-icon" style="background:#ff8a5c1a;color:#ff8a5c"><i class="fas fa-video"></i></div>
+        <h3>Video Production &amp; AI Content</h3>
+        <p>Promotional videos, explainers, social reels, product showcases and AI-assisted content that make your brand look established — scripted, edited and delivered ready to post.</p>
+        <a href="#video-gallery" class="service-link">Watch Videos <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#00d2ff">
+        <div class="service-icon" style="background:#00d2ff1a;color:#00d2ff"><i class="fas fa-paint-brush"></i></div>
+        <h3>Graphic Design &amp; Brand Identity</h3>
+        <p>Logo design, brand guidelines, packaging, flyers, brochures, exhibition stands, social media kits and all visual identity material your business needs.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#7b2ff7">
+        <div class="service-icon" style="background:#7b2ff71a;color:#7b2ff7"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Local SEO &amp; Google Maps Ranking</h3>
+        <p>Google Business Profile setup and optimization, local SEO, review strategy and map ranking so customers in your city find you first.</p>
+        <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--accent:#ff6b6b">
+        <div class="service-icon" style="background:#ff6b6b1a;color:#ff6b6b"><i class="fas fa-headset"></i></div>
+        <h3>IT Support &amp; Managed Services</h3>
+        <p>Annual maintenance contracts, remote and on-site support, backup, network and server management, software licensing and staff training.</p>
         <a href="#contact" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
-
+<section id="industrial-software">
+  <div class="wrapper">
+    <div class="section-header reveal">
+      <div class="section-label"><i class="fas fa-industry"></i> Industrial Software</div>
+      <h2>Industrial <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Software in Saudi Arabia</span></h2>
+      <p>Browse the real platforms we implement, integrate and support — or search for the one you already use.</p>
+    </div>
+    <div class="catalog-tools reveal">
+      <input class="catalog-search" id="indSearch" type="search" placeholder="Search name, vendor or category…" aria-label="Search">
+      <div class="catalog-count" id="indCount"></div>
+    </div>
+    <div class="catalog-filter" id="indChips"></div>
+    <div class="sw-group" data-group="Process Control &amp; Automation">
+      <h3 class="cat-group-title">Process Control &amp; Automation <span>12 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="abb ability system 800xa" data-vendor="abb">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>ABB Ability System 800xA</h4>
+          <div class="sw-vendor">ABB</div>
+          <p>Extended automation system that puts DCS, electrical control and safety on one plant-wide platform, common in cement, metals and utilities.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>ABB upgraded the 800xA system across Eastern Province Cement Company's production lines at Al Khursaniya.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="aveva system platform (intouch)" data-vendor="aveva">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>AVEVA System Platform (InTouch)</h4>
+          <div class="sw-vendor">AVEVA</div>
+          <p>Object-based SCADA and HMI layer that standardises graphics and data across many plant units and sites.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>AVEVA and Schneider Electric signed an alliance with Saudi partner Obeikan Digital Solutions to deliver Industry 4.0 technologies in the Kingdom.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="centum vp" data-vendor="yokogawa">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>CENTUM VP</h4>
+          <div class="sw-vendor">Yokogawa</div>
+          <p>Distributed control system (DCS) that runs refinery, gas plant and petrochemical units from a central control room, with integrated alarm management and batch control.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Yokogawa DCS and ESD are installed at YASREF in Yanbu, and Aramco deployed Yokogawa AI agents on CENTUM VP at the Fadhili Gas Plant.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="deltav" data-vendor="emerson">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>DeltaV</h4>
+          <div class="sw-vendor">Emerson</div>
+          <p>DCS with batch and safety instrumented system capability used in chemical, gas and midstream plants, known for electronic marshalling.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Emerson has a digital-transformation agreement with Aramco and deployed an AI-driven optimisation solution for Aramco operations in the Kingdom.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="ecostruxure process expert" data-vendor="schneider electric">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>EcoStruxure Process Expert</h4>
+          <div class="sw-vendor">Schneider Electric</div>
+          <p>DCS and SCADA platform (Foxboro and Modicon lineage) that unifies process control with power and energy management.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Schneider Electric has a digital-transformation MoU with Aramco and collaborates on the O-PAS open automation test bed in the Kingdom.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="experion pks" data-vendor="honeywell">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>Experion PKS</h4>
+          <div class="sw-vendor">Honeywell</div>
+          <p>Flagship DCS/HMI platform for continuous process plants, combining controllers, operator stations, safety and historian integration.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Standard in Saudi refining and petrochemical control rooms; Honeywell runs an intelligent-operations software joint venture with Aramco.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="ignition" data-vendor="inductive automation">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>Ignition</h4>
+          <div class="sw-vendor">Inductive Automation</div>
+          <p>License-light SCADA/HMI platform with unlimited clients and built-in MES, reporting and alarm modules.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Widely used by Saudi system integrators for water, food, cement and factory SCADA upgrades where budget beats legacy DCS pricing.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="plantpax 5.0" data-vendor="rockwell automation">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>PlantPAx 5.0</h4>
+          <div class="sw-vendor">Rockwell Automation</div>
+          <p>Modern DCS built on Logix controllers, giving mid-size plants scalable process control without a proprietary control platform.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Rockwell signed an automation and localisation MoU with Aramco and opened a Digital Center of Excellence in Saudi Arabia.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="prosafe-rs" data-vendor="yokogawa">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>ProSafe-RS</h4>
+          <div class="sw-vendor">Yokogawa</div>
+          <p>SIL 3 safety instrumented system that integrates with CENTUM VP so shutdown logic and process control share one engineering database.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Yokogawa ESD/SIS is in service alongside its DCS at YASREF, Yanbu.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="simatic pcs 7" data-vendor="siemens">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>SIMATIC PCS 7</h4>
+          <div class="sw-vendor">Siemens</div>
+          <p>Process control system built on Simatic controllers for continuous and hybrid plants, engineered in the same environment as the PLCs.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Found in Saudi water, power and industrial plants, supported by Siemens service and training centres in Riyadh, Dammam and Jubail.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="simatic s7-1500 / tia portal" data-vendor="siemens">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>SIMATIC S7-1500 / TIA Portal</h4>
+          <div class="sw-vendor">Siemens</div>
+          <p>PLC family and its integrated engineering software, the most widely deployed controller platform for machines, utilities and process skids.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Dominant PLC in Saudi factories, water pumping stations and building services; stocked and programmed by local integrators.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Control &amp; Automation" data-name="triconex tricon" data-vendor="schneider electric">
+          <span class="sw-cat">Process Control &amp; Automation</span>
+          <h4>Triconex Tricon</h4>
+          <div class="sw-vendor">Schneider Electric</div>
+          <p>Triple-modular-redundant safety and critical control platform, a long-time standard for emergency shutdown and turbomachinery protection.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Common scope item in Saudi gas plants, pipelines and compressor stations executed by local EPC contractors.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Engineering Design &amp; PLM">
+      <h3 class="cat-group-title">Engineering Design &amp; PLM <span>9 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="3dexperience / catia" data-vendor="dassault systemes">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>3DEXPERIENCE / CATIA</h4>
+          <div class="sw-vendor">Dassault Systemes</div>
+          <p>Design, simulation and PLM platform for complex products, holding one digital model from concept to service.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Present in Saudi advanced manufacturing, aerospace and industrial equipment design work.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="autocad plant 3d" data-vendor="autodesk">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>AutoCAD Plant 3D</h4>
+          <div class="sw-vendor">Autodesk</div>
+          <p>Accessible 3D piping and plant design tool for smaller projects, skids and plant modifications.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Very common among Saudi fabrication shops, skid builders and smaller engineering offices.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="e3d design" data-vendor="aveva">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>E3D Design</h4>
+          <div class="sw-vendor">AVEVA</div>
+          <p>3D plant and marine design platform (PDMS lineage) for multi-discipline brownfield modelling of operating plants.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi engineering contractors on congested brownfield revamps, where laser-scanned as-built data drives the model.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="eplan electric p8" data-vendor="eplan">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>EPLAN Electric P8</h4>
+          <div class="sw-vendor">EPLAN</div>
+          <p>Electrical CAD that generates schematics, panel layouts, terminal lists and wire numbering automatically.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi panel builders and electrical contractors to produce compliant MCC and switchgear drawings.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="navisworks" data-vendor="autodesk">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>Navisworks</h4>
+          <div class="sw-vendor">Autodesk</div>
+          <p>Model aggregation and clash detection software that combines multi-discipline 3D models for construction review.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Standard on Saudi construction and industrial projects for model review before site works begin.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="revit" data-vendor="autodesk">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>Revit</h4>
+          <div class="sw-vendor">Autodesk</div>
+          <p>BIM authoring software for buildings and industrial structures, producing coordinated models and quantities.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Required on many Saudi Vision 2030 developments, including giga-project buildings and utility works.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="smart 3d (s3d)" data-vendor="hexagon">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>Smart 3D (S3D)</h4>
+          <div class="sw-vendor">Hexagon</div>
+          <p>3D plant design system (formerly Intergraph SmartPlant 3D) used to model piping, equipment and structures for process plants.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used on Saudi refinery, gas and petrochemical expansions; Intergraph design tools formed part of YASREF's engineering environment.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="smartplant instrumentation" data-vendor="hexagon">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>SmartPlant Instrumentation</h4>
+          <div class="sw-vendor">Hexagon</div>
+          <p>Instrument index, loop drawings and wiring database (formerly INtools) that keeps instrument data consistent through handover.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Standard handover software on Saudi EPC projects for Aramco, SABIC and Ma'aden facilities.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Engineering Design &amp; PLM" data-name="teamcenter" data-vendor="siemens">
+          <span class="sw-cat">Engineering Design &amp; PLM</span>
+          <h4>Teamcenter</h4>
+          <div class="sw-vendor">Siemens</div>
+          <p>Product lifecycle management platform controlling design revisions, bills of material and engineering change across a manufacturer.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi manufacturers and industrial programmes needing controlled engineering change management.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Power Systems &amp; Grid">
+      <h3 class="cat-group-title">Power Systems &amp; Grid <span>8 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="digsilent powerfactory" data-vendor="digsilent">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>DIgSILENT PowerFactory</h4>
+          <div class="sw-vendor">DIgSILENT</div>
+          <p>Transmission and distribution analysis platform for grid stability, renewables integration and connection studies.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in Saudi grid and industrial interconnection studies, including renewable and large plant connections.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="ecostruxure power monitoring expert" data-vendor="schneider electric">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>EcoStruxure Power Monitoring Expert</h4>
+          <div class="sw-vendor">Schneider Electric</div>
+          <p>Power management software that collects meter and protection data for energy reporting, power quality and electrical asset health.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in Saudi industrial plants, hospitals and campuses built on Schneider medium-voltage equipment.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="etap" data-vendor="etap">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>ETAP</h4>
+          <div class="sw-vendor">ETAP</div>
+          <p>Electrical power system analysis and operation software: load flow, short circuit, protection coordination and arc flash studies.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>The most commonly used power study package among Saudi consultants, industrial plants and utilities.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="gridos adms" data-vendor="ge vernova">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>GridOS ADMS</h4>
+          <div class="sw-vendor">GE Vernova</div>
+          <p>Advanced distribution management system for outage management, switching and distribution grid operations.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applicable to Saudi distribution utilities modernising outage and network operations; GE has long supplied Saudi power plants.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="hitachi energy network manager scada" data-vendor="hitachi energy">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>Hitachi Energy Network Manager SCADA</h4>
+          <div class="sw-vendor">Hitachi Energy</div>
+          <p>Utility-grade SCADA and energy management system for transmission and distribution operators.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Relevant to Saudi grid expansion and the Kingdom's HVDC interconnection projects delivered with Hitachi Energy technology.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="itron mdms" data-vendor="itron">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>Itron MDMS</h4>
+          <div class="sw-vendor">Itron</div>
+          <p>Meter data management and analytics that turn mass smart-meter data into billing, loss analysis and grid insight.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied in Gulf smart metering and AMI programmes comparable to the Kingdom's utility meter rollouts.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="monarch (osi)" data-vendor="aspentech">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>monarch (OSI)</h4>
+          <div class="sw-vendor">AspenTech</div>
+          <p>High-availability SCADA platform for electric grid, pipeline and gas network operations, including leak detection.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by regional utilities and pipeline operators and a candidate platform for Saudi transmission and gas network control.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Power Systems &amp; Grid" data-name="pss/e" data-vendor="siemens">
+          <span class="sw-cat">Power Systems &amp; Grid</span>
+          <h4>PSS/E</h4>
+          <div class="sw-vendor">Siemens</div>
+          <p>Transmission planning and dynamic simulation software used by system operators and grid planners.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applicable to Saudi transmission planning and interconnection studies on the national grid.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Plant Data &amp; Analytics">
+      <h3 class="cat-group-title">Plant Data &amp; Analytics <span>7 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="aveva pi system" data-vendor="aveva">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>AVEVA PI System</h4>
+          <div class="sw-vendor">AVEVA</div>
+          <p>Plant historian and real-time data infrastructure (formerly OSIsoft PI) that collects years of tag history for operations, energy and reliability analytics.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Aramco runs PI at Ras Tanura Refinery (about 50,000 tags integrated) and at EXPEC, and YASREF built its refinery information system on it.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="cognite data fusion" data-vendor="cognite">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>Cognite Data Fusion</h4>
+          <div class="sw-vendor">Cognite</div>
+          <p>Industrial data platform that contextualises historian, maintenance and engineering data so AI and analytics applications can use it at scale.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Marketed in the Kingdom through CNTXT, the Aramco-Cognite joint venture based in Saudi Arabia.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="exaquantum" data-vendor="yokogawa">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>Exaquantum</h4>
+          <div class="sw-vendor">Yokogawa</div>
+          <p>Plant information management system that collects and contextualises process data for production, quality and energy reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Natural fit at Yokogawa-controlled Saudi plants such as YASREF and Aramco facilities running CENTUM VP.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="infoplus.21" data-vendor="aspentech">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>InfoPlus.21</h4>
+          <div class="sw-vendor">AspenTech</div>
+          <p>Real-time plant historian and information layer that sits beneath advanced process control, blending and yield accounting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Common in Saudi refineries and petrochemical complexes that also run AspenTech simulation and APC.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="power bi" data-vendor="microsoft">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>Power BI</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Business intelligence service that turns plant, maintenance and ERP data into dashboards for management and operations reviews.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Near-universal reporting layer in Saudi industry, helped by Microsoft enterprise licensing and in-Kingdom cloud regions.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="seeq" data-vendor="seeq">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>Seeq</h4>
+          <div class="sw-vendor">Seeq</div>
+          <p>Self-service analytics for time-series process data, letting engineers find and model production losses without writing code.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Gulf oil, gas and chemical operators to analyse historian data; delivered in KSA through local analytics partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Plant Data &amp; Analytics" data-name="uniformance suite / phd" data-vendor="honeywell">
+          <span class="sw-cat">Plant Data &amp; Analytics</span>
+          <h4>Uniformance Suite / PHD</h4>
+          <div class="sw-vendor">Honeywell</div>
+          <p>Process historian plus asset-centric analytics and visualisation that turns plant event and process data into operating decisions.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed where Experion is the control platform; Honeywell's Aramco joint venture targets intelligent-operations software for the Kingdom.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Reliability, Safety &amp; HSE">
+      <h3 class="cat-group-title">Reliability, Safety &amp; HSE <span>7 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="aveva predictive analytics" data-vendor="aveva">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>AVEVA Predictive Analytics</h4>
+          <div class="sw-vendor">AVEVA</div>
+          <p>Predictive maintenance software that forecasts equipment time-to-failure from historian and maintenance data.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi Aramco presented work using it for process operations monitoring and a rotating equipment advisory tool.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="enablon" data-vendor="wolters kluwer">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>Enablon</h4>
+          <div class="sw-vendor">Wolters Kluwer</div>
+          <p>EHS, permit-to-work and control-of-work software for large industrial sites managing contractors in live plants.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Relevant to Saudi plants issuing thousands of contractor permits during turnarounds and projects.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="flacs" data-vendor="gexcon">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>FLACS</h4>
+          <div class="sw-vendor">Gexcon</div>
+          <p>CFD software for gas dispersion, explosion and ventilation analysis in congested industrial geometries.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied by Saudi operators and consultants for explosion risk and ventilation studies on gas facilities.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="pha-pro" data-vendor="sphera">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>PHA-Pro</h4>
+          <div class="sw-vendor">Sphera</div>
+          <p>HAZOP and process hazard analysis software that structures study worksheets and generates risk reports.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Standard tool on Saudi greenfield and revamp projects for HAZOP sessions and safety study documentation.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="phast &amp; safeti" data-vendor="dnv">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>Phast &amp; Safeti</h4>
+          <div class="sw-vendor">DNV</div>
+          <p>Consequence modelling software for fire, explosion and toxic dispersion that sizes plant separation and mitigation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in Saudi facility siting and QRA studies for refineries, gas plants and petrochemical complexes.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="sap ehs management" data-vendor="sap">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>SAP EHS Management</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>SAP module for incident management, hazardous substance data and regulatory compliance reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Runs inside the SAP estates of Saudi chemical, oil and industrial companies.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Reliability, Safety &amp; HSE" data-name="spheracloud ehs" data-vendor="sphera">
+          <span class="sw-cat">Reliability, Safety &amp; HSE</span>
+          <h4>SpheraCloud EHS</h4>
+          <div class="sw-vendor">Sphera</div>
+          <p>Enterprise health, safety and environmental platform for incident reporting, audits, action tracking and compliance.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi industrial and energy companies to demonstrate HSE performance to regulators and partners.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Asset Management &amp; Maintenance">
+      <h3 class="cat-group-title">Asset Management &amp; Maintenance <span>6 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Asset Management &amp; Maintenance" data-name="beamex cmx" data-vendor="beamex">
+          <span class="sw-cat">Asset Management &amp; Maintenance</span>
+          <h4>Beamex CMX</h4>
+          <div class="sw-vendor">Beamex</div>
+          <p>Calibration management software that documents instrument calibration, tolerances and certificates to audit standards.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in Saudi plants and calibration laboratories to satisfy ISO 9001, ISO 17025 and oil-company quality requirements.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Asset Management &amp; Maintenance" data-name="fiix" data-vendor="rockwell automation">
+          <span class="sw-cat">Asset Management &amp; Maintenance</span>
+          <h4>Fiix</h4>
+          <div class="sw-vendor">Rockwell Automation</div>
+          <p>Cloud CMMS with mobile work orders and parts inventory, aimed at plants wanting maintenance discipline without heavy IT.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Popular with Saudi mid-market manufacturers and facility operators as a low-cost entry CMMS.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Asset Management &amp; Maintenance" data-name="ibm maximo application suite" data-vendor="ibm">
+          <span class="sw-cat">Asset Management &amp; Maintenance</span>
+          <h4>IBM Maximo Application Suite</h4>
+          <div class="sw-vendor">IBM</div>
+          <p>Enterprise asset management for work orders, preventive maintenance, spares and asset health across large equipment fleets.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Selected by KAFD and Diriyah Company in Riyadh and by Marafiq, announced at LEAP in Saudi Arabia.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Asset Management &amp; Maintenance" data-name="infor eam" data-vendor="hexagon">
+          <span class="sw-cat">Asset Management &amp; Maintenance</span>
+          <h4>Infor EAM</h4>
+          <div class="sw-vendor">Hexagon</div>
+          <p>Asset management suite for maintenance, fleet and facilities with strong mobility and inspection workflows.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed at Saudi industrial plants, ports and facilities operations needing CMMS discipline without a full SAP footprint.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Asset Management &amp; Maintenance" data-name="oracle fusion cloud eam" data-vendor="oracle">
+          <span class="sw-cat">Asset Management &amp; Maintenance</span>
+          <h4>Oracle Fusion Cloud EAM</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Cloud maintenance and asset lifecycle module integrated with procurement, projects and finance.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi organisations standardised on Oracle ERP, including utilities and industrial services firms.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Asset Management &amp; Maintenance" data-name="sap s/4hana asset management" data-vendor="sap">
+          <span class="sw-cat">Asset Management &amp; Maintenance</span>
+          <h4>SAP S/4HANA Asset Management</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>SAP maintenance module for notifications, work orders, functional locations and preventive plans, tied to finance and procurement.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Runs inside the SAP estates of Aramco, SABIC, Tasnee and many Saudi industrial groups.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="OT Cybersecurity">
+      <h3 class="cat-group-title">OT Cybersecurity <span>6 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="OT Cybersecurity" data-name="claroty xdome / continuous threat detection" data-vendor="claroty">
+          <span class="sw-cat">OT Cybersecurity</span>
+          <h4>Claroty xDome / Continuous Threat Detection</h4>
+          <div class="sw-vendor">Claroty</div>
+          <p>OT security platform that discovers every industrial asset and detects attacks on PLCs, DCS and engineering workstations.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in Gulf energy and utility OT networks and a common choice for Saudi plants adding IEC 62443 controls.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="OT Cybersecurity" data-name="dragos platform" data-vendor="dragos">
+          <span class="sw-cat">OT Cybersecurity</span>
+          <h4>Dragos Platform</h4>
+          <div class="sw-vendor">Dragos</div>
+          <p>Industrial threat detection backed by ICS-specific intelligence and incident response services.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Adopted by Gulf oil and gas and utility operators, and relevant to Saudi critical-infrastructure cyber programmes.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="OT Cybersecurity" data-name="fortinet ot security (fortigate)" data-vendor="fortinet">
+          <span class="sw-cat">OT Cybersecurity</span>
+          <h4>Fortinet OT Security (FortiGate)</h4>
+          <div class="sw-vendor">Fortinet</div>
+          <p>Industrial firewalls and network segmentation designed for plant-floor protocols, plus central management.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>One of the most widely deployed security platforms in Saudi industrial and government networks.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="OT Cybersecurity" data-name="honeywell forge cybersecurity suite" data-vendor="honeywell">
+          <span class="sw-cat">OT Cybersecurity</span>
+          <h4>Honeywell Forge Cybersecurity Suite</h4>
+          <div class="sw-vendor">Honeywell</div>
+          <p>OT cyber monitoring, secure remote access and device integrity management for process plants.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Fits Saudi plants already running Honeywell control systems and Aramco's documented NIST-based cyber programme.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="OT Cybersecurity" data-name="microsoft defender for iot" data-vendor="microsoft">
+          <span class="sw-cat">OT Cybersecurity</span>
+          <h4>Microsoft Defender for IoT</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Agentless OT network discovery and threat detection integrated with Microsoft security operations tooling.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Attractive to Saudi enterprises standardising on Microsoft security stacks across IT and OT.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="OT Cybersecurity" data-name="nozomi networks guardian" data-vendor="nozomi networks">
+          <span class="sw-cat">OT Cybersecurity</span>
+          <h4>Nozomi Networks Guardian</h4>
+          <div class="sw-vendor">Nozomi Networks</div>
+          <p>Passive OT/IT network monitoring that maps industrial assets and flags anomalous control-network behaviour.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by regional utilities, oil and gas operators for OT visibility in Saudi and neighbouring Gulf networks.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Industrial ERP &amp; Supply Chain">
+      <h3 class="cat-group-title">Industrial ERP &amp; Supply Chain <span>5 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Industrial ERP &amp; Supply Chain" data-name="microsoft dynamics 365" data-vendor="microsoft">
+          <span class="sw-cat">Industrial ERP &amp; Supply Chain</span>
+          <h4>Microsoft Dynamics 365</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Business applications suite for finance, supply chain, sales and field service.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Common in Saudi mid-market manufacturers and industrial service companies wanting ERP with familiar Microsoft tooling.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial ERP &amp; Supply Chain" data-name="odoo" data-vendor="odoo">
+          <span class="sw-cat">Industrial ERP &amp; Supply Chain</span>
+          <h4>Odoo</h4>
+          <div class="sw-vendor">Odoo</div>
+          <p>Modular open-source ERP for manufacturers and distributors: sales, inventory, MRP, quality and accounting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Very popular with Saudi SMEs because Phase 2 ZATCA e-invoicing compliance is delivered by local Odoo partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial ERP &amp; Supply Chain" data-name="oracle fusion cloud erp" data-vendor="oracle">
+          <span class="sw-cat">Industrial ERP &amp; Supply Chain</span>
+          <h4>Oracle Fusion Cloud ERP</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Cloud ERP suite for finance, procurement, projects, inventory and maintenance.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi industrial, contracting and utility organisations standardised on Oracle.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial ERP &amp; Supply Chain" data-name="sap ariba" data-vendor="sap">
+          <span class="sw-cat">Industrial ERP &amp; Supply Chain</span>
+          <h4>SAP Ariba</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Cloud procurement and sourcing platform for tenders, supplier management and purchase orders.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Tasnee ranked first globally for SAP Ariba Sourcing adoption, and SWCC runs its supplier system on Ariba.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial ERP &amp; Supply Chain" data-name="sap s/4hana" data-vendor="sap">
+          <span class="sw-cat">Industrial ERP &amp; Supply Chain</span>
+          <h4>SAP S/4HANA</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Enterprise ERP covering finance, procurement, production, maintenance and supply chain on one in-memory platform.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>SABIC runs it, Aramco migrated its finance and logistics systems to it, and Tasnee completed a RISE with SAP S/4HANA programme.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Industrial IoT, Digital Twin &amp; AI">
+      <h3 class="cat-group-title">Industrial IoT, Digital Twin &amp; AI <span>5 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Industrial IoT, Digital Twin &amp; AI" data-name="bentley itwin" data-vendor="bentley systems">
+          <span class="sw-cat">Industrial IoT, Digital Twin &amp; AI</span>
+          <h4>Bentley iTwin</h4>
+          <div class="sw-vendor">Bentley Systems</div>
+          <p>Digital twin platform that links engineering models to live operational data for infrastructure owners.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used on large Saudi infrastructure and plant digital-twin initiatives, including giga-project asset management.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial IoT, Digital Twin &amp; AI" data-name="honeywell forge asset performance management" data-vendor="honeywell">
+          <span class="sw-cat">Industrial IoT, Digital Twin &amp; AI</span>
+          <h4>Honeywell Forge Asset Performance Management</h4>
+          <div class="sw-vendor">Honeywell</div>
+          <p>Cloud analytics that unifies asset, process and maintenance data to predict failures and prioritise maintenance work.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Offered to Saudi industry through Honeywell's Aramco joint venture for intelligent operations software.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial IoT, Digital Twin &amp; AI" data-name="insights hub" data-vendor="siemens">
+          <span class="sw-cat">Industrial IoT, Digital Twin &amp; AI</span>
+          <h4>Insights Hub</h4>
+          <div class="sw-vendor">Siemens</div>
+          <p>Industrial IoT platform (formerly MindSphere) for connecting machines, building apps and running plant analytics.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in Saudi manufacturing digitalisation projects tied to Siemens automation installations.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial IoT, Digital Twin &amp; AI" data-name="nvidia omniverse" data-vendor="nvidia">
+          <span class="sw-cat">Industrial IoT, Digital Twin &amp; AI</span>
+          <h4>NVIDIA Omniverse</h4>
+          <div class="sw-vendor">NVIDIA</div>
+          <p>Real-time 3D simulation and collaboration platform used to build photorealistic, physics-based industrial twins.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied in Saudi giga-project digital twin and simulation work, often paired with Bentley iTwin.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Industrial IoT, Digital Twin &amp; AI" data-name="thingworx" data-vendor="ptc">
+          <span class="sw-cat">Industrial IoT, Digital Twin &amp; AI</span>
+          <h4>ThingWorx</h4>
+          <div class="sw-vendor">PTC</div>
+          <p>IIoT platform for device connectivity, dashboards and building custom industrial applications.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied by Saudi industrial firms building connected-factory and remote equipment monitoring services.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Manufacturing Execution (MES/OEE)">
+      <h3 class="cat-group-title">Manufacturing Execution (MES/OEE) <span>5 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Manufacturing Execution (MES/OEE)" data-name="honeywell forge production intelligence" data-vendor="honeywell">
+          <span class="sw-cat">Manufacturing Execution (MES/OEE)</span>
+          <h4>Honeywell Forge Production Intelligence</h4>
+          <div class="sw-vendor">Honeywell</div>
+          <p>Production management software that reconciles live plant data against plans to expose yield, throughput and energy gaps.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Positioned for Aramco and Saudi petrochemical operators through Honeywell's Saudi intelligent-operations joint venture.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Manufacturing Execution (MES/OEE)" data-name="opcenter execution" data-vendor="siemens">
+          <span class="sw-cat">Manufacturing Execution (MES/OEE)</span>
+          <h4>Opcenter Execution</h4>
+          <div class="sw-vendor">Siemens</div>
+          <p>Shop-floor MES for discrete and process manufacturing: work orders, material genealogy, traceability and machine integration.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied to Saudi manufacturing digitisation projects in the industrial cities, including new and localised production lines.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Manufacturing Execution (MES/OEE)" data-name="sap digital manufacturing" data-vendor="sap">
+          <span class="sw-cat">Manufacturing Execution (MES/OEE)</span>
+          <h4>SAP Digital Manufacturing</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Cloud MES that links SAP production orders directly to shop-floor operators, machines and quality checks.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Chosen by Saudi manufacturers already running SAP ERP who want shop-floor execution inside the same system.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Manufacturing Execution (MES/OEE)" data-name="traksys" data-vendor="parsec automation">
+          <span class="sw-cat">Manufacturing Execution (MES/OEE)</span>
+          <h4>TrakSYS</h4>
+          <div class="sw-vendor">Parsec Automation</div>
+          <p>OEE and downtime tracking system that reports line availability, performance and quality losses shift by shift.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Typical deployment in Saudi factories and FMCG plants starting structured OEE improvement programmes.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Manufacturing Execution (MES/OEE)" data-name="werum pas-x" data-vendor="korber">
+          <span class="sw-cat">Manufacturing Execution (MES/OEE)</span>
+          <h4>Werum PAS-X</h4>
+          <div class="sw-vendor">Korber</div>
+          <p>Industry-standard MES for pharmaceutical manufacturing, covering dispensing, electronic batch records and serialisation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi drug manufacturers and their fill-finish lines as local pharma production grows under Vision 2030.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Mining, Cement &amp; Materials">
+      <h3 class="cat-group-title">Mining, Cement &amp; Materials <span>5 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Mining, Cement &amp; Materials" data-name="deswik.suite" data-vendor="deswik">
+          <span class="sw-cat">Mining, Cement &amp; Materials</span>
+          <h4>Deswik.Suite</h4>
+          <div class="sw-vendor">Deswik</div>
+          <p>Mine design, scheduling and drill-and-blast software with strong underground and short-term planning tools.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi mining operators and consultants for mine scheduling and short-term planning.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Mining, Cement &amp; Materials" data-name="ecs/processexpert" data-vendor="flsmidth">
+          <span class="sw-cat">Mining, Cement &amp; Materials</span>
+          <h4>ECS/ProcessExpert</h4>
+          <div class="sw-vendor">FLSmidth</div>
+          <p>Advanced process control for cement kilns and mills that stabilises operation and cuts specific fuel and power consumption.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Relevant to Saudi cement producers, where FLSmidth equipment and process optimisation are widely installed.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Mining, Cement &amp; Materials" data-name="mineoperate (fleet &amp; blast monitoring)" data-vendor="hexagon">
+          <span class="sw-cat">Mining, Cement &amp; Materials</span>
+          <h4>MineOperate (Fleet &amp; Blast Monitoring)</h4>
+          <div class="sw-vendor">Hexagon</div>
+          <p>Operational fleet management, drill and blast monitoring and machine guidance for open-pit mines.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed by Ma'aden with Hexagon to create the Middle East's first digital mine and a blueprint for Saudi mining.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Mining, Cement &amp; Materials" data-name="mineplan" data-vendor="hexagon">
+          <span class="sw-cat">Mining, Cement &amp; Materials</span>
+          <h4>MinePlan</h4>
+          <div class="sw-vendor">Hexagon</div>
+          <p>Mine planning suite covering geological modelling, pit design, scheduling and reserves reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Hexagon's mining stack, including MinePlan, underpins Ma'aden's Mansourah-Massarah digital gold mine in Saudi Arabia.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Mining, Cement &amp; Materials" data-name="minestar fleet" data-vendor="caterpillar">
+          <span class="sw-cat">Mining, Cement &amp; Materials</span>
+          <h4>MineStar Fleet</h4>
+          <div class="sw-vendor">Caterpillar</div>
+          <p>Fleet management system that assigns trucks and loaders and tracks cycle times, payload and productivity.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used on Saudi mining and quarry operations running Caterpillar fleets, including phosphate and gold developments.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Process Simulation &amp; Optimisation">
+      <h3 class="cat-group-title">Process Simulation &amp; Optimisation <span>5 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Process Simulation &amp; Optimisation" data-name="aspen dmc3" data-vendor="aspentech">
+          <span class="sw-cat">Process Simulation &amp; Optimisation</span>
+          <h4>Aspen DMC3</h4>
+          <div class="sw-vendor">AspenTech</div>
+          <p>Multivariable advanced process control that pushes units closer to constraints for more throughput and less energy use.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied on Saudi refinery and petrochemical units where APC benefits are measured in barrels and fuel gas savings.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Simulation &amp; Optimisation" data-name="aspen hysys" data-vendor="aspentech">
+          <span class="sw-cat">Process Simulation &amp; Optimisation</span>
+          <h4>Aspen HYSYS</h4>
+          <div class="sw-vendor">AspenTech</div>
+          <p>Steady-state and dynamic process simulator used to design units and build digital twins for debottleneck studies.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Aramco used HYSYS digital twins of refinery units to plan a 100,000 bpd capacity increase and bottom-of-the-barrel upgrades.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Simulation &amp; Optimisation" data-name="aspen plus" data-vendor="aspentech">
+          <span class="sw-cat">Process Simulation &amp; Optimisation</span>
+          <h4>Aspen Plus</h4>
+          <div class="sw-vendor">AspenTech</div>
+          <p>Chemical process simulator for reaction, separation and polymer plant modelling with a large physical property database.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by SABIC and Saudi chemical producers for plant modelling, energy studies and catalyst evaluation.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Simulation &amp; Optimisation" data-name="profit suite / rmpct" data-vendor="honeywell">
+          <span class="sw-cat">Process Simulation &amp; Optimisation</span>
+          <h4>Profit Suite / RMPCT</h4>
+          <div class="sw-vendor">Honeywell</div>
+          <p>Advanced control and real-time optimisation suite that supervises DCS loops for yield and energy optimisation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Installed in Saudi refineries and gas plants running Honeywell control systems.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Process Simulation &amp; Optimisation" data-name="real-time optimizer (rt-op)" data-vendor="yokogawa">
+          <span class="sw-cat">Process Simulation &amp; Optimisation</span>
+          <h4>Real-Time Optimizer (RT-OP)</h4>
+          <div class="sw-vendor">Yokogawa</div>
+          <p>Closed-loop real-time optimiser that recalculates the best operating targets for a plant as conditions change.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed with Yokogawa at the Aramco Riyadh Refinery to improve hydrocracker operating efficiency.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Upstream Oil &amp; Gas">
+      <h3 class="cat-group-title">Upstream Oil &amp; Gas <span>5 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Upstream Oil &amp; Gas" data-name="eclipse" data-vendor="slb">
+          <span class="sw-cat">Upstream Oil &amp; Gas</span>
+          <h4>Eclipse</h4>
+          <div class="sw-vendor">SLB</div>
+          <p>Black-oil and compositional reservoir simulator used for reserves estimation and field development forecasting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Long-standing reference simulator for Saudi reservoirs, used by operators and university research groups in the Kingdom.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Upstream Oil &amp; Gas" data-name="ipm (prosper, mbal, gap)" data-vendor="petroleum experts">
+          <span class="sw-cat">Upstream Oil &amp; Gas</span>
+          <h4>IPM (Prosper, MBAL, GAP)</h4>
+          <div class="sw-vendor">Petroleum Experts</div>
+          <p>Integrated production modelling suite covering well performance, material balance and surface network modelling.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in Saudi intelligent-field production optimisation and network debottlenecking work.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Upstream Oil &amp; Gas" data-name="petrel" data-vendor="slb">
+          <span class="sw-cat">Upstream Oil &amp; Gas</span>
+          <h4>Petrel</h4>
+          <div class="sw-vendor">SLB</div>
+          <p>Subsurface interpretation and modelling platform combining seismic, geological and reservoir data for field development.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Core interpretation tool for Saudi upstream teams and the service companies working on Aramco reservoirs.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Upstream Oil &amp; Gas" data-name="pipesim" data-vendor="slb">
+          <span class="sw-cat">Upstream Oil &amp; Gas</span>
+          <h4>PIPESIM</h4>
+          <div class="sw-vendor">SLB</div>
+          <p>Steady-state multiphase flow simulator for wells, flowlines and pipelines, used to size artificial lift and networks.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Standard flow assurance tool on Saudi oil and gas production and pipeline projects.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Upstream Oil &amp; Gas" data-name="techlog" data-vendor="slb">
+          <span class="sw-cat">Upstream Oil &amp; Gas</span>
+          <h4>Techlog</h4>
+          <div class="sw-vendor">SLB</div>
+          <p>Wellbore data and petrophysics software for log interpretation, geomechanics and core analysis.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi operators and service companies for formation evaluation and well log interpretation.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Water &amp; Utilities">
+      <h3 class="cat-group-title">Water &amp; Utilities <span>4 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Water &amp; Utilities" data-name="sewergems" data-vendor="bentley systems">
+          <span class="sw-cat">Water &amp; Utilities</span>
+          <h4>SewerGEMS</h4>
+          <div class="sw-vendor">Bentley Systems</div>
+          <p>Wastewater and storm network modelling for capacity, flooding and rehabilitation analysis.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied in Saudi municipal and industrial-city wastewater network planning, including flood risk studies.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Water &amp; Utilities" data-name="trimble unity" data-vendor="trimble">
+          <span class="sw-cat">Water &amp; Utilities</span>
+          <h4>Trimble Unity</h4>
+          <div class="sw-vendor">Trimble</div>
+          <p>Field and asset management software for water utilities: work orders, inspections and GIS-linked field crews.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Gulf water and municipal operators for field crew dispatch and network asset inspection.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Water &amp; Utilities" data-name="watergems" data-vendor="bentley systems">
+          <span class="sw-cat">Water &amp; Utilities</span>
+          <h4>WaterGEMS</h4>
+          <div class="sw-vendor">Bentley Systems</div>
+          <p>Water distribution modelling software for hydraulic analysis, pump scheduling and network rehabilitation planning.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi water utilities and their consultants for master planning and non-revenue water reduction studies.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Water &amp; Utilities" data-name="xylem vue" data-vendor="xylem">
+          <span class="sw-cat">Water &amp; Utilities</span>
+          <h4>Xylem Vue</h4>
+          <div class="sw-vendor">Xylem</div>
+          <p>Digital water platform that combines pumping, metering and network data to cut energy use and water losses.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Relevant to Saudi water and wastewater operators facing high pumping energy costs and non-revenue water targets.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Laboratory &amp; Quality">
+      <h3 class="cat-group-title">Laboratory &amp; Quality <span>3 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Laboratory &amp; Quality" data-name="labvantage lims" data-vendor="labvantage solutions">
+          <span class="sw-cat">Laboratory &amp; Quality</span>
+          <h4>LabVantage LIMS</h4>
+          <div class="sw-vendor">LabVantage Solutions</div>
+          <p>Configurable LIMS and ELN platform for QA/QC laboratories in manufacturing and process industries.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Selected by Saudi manufacturers and laboratories modernising quality data management.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Laboratory &amp; Quality" data-name="labware lims" data-vendor="labware">
+          <span class="sw-cat">Laboratory &amp; Quality</span>
+          <h4>LabWare LIMS</h4>
+          <div class="sw-vendor">LabWare</div>
+          <p>Laboratory information management system that manages samples, tests, specifications and certificates for process and petrochemical labs.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in Gulf petrochemical and refinery laboratories for process-control testing and compliance reporting.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Laboratory &amp; Quality" data-name="samplemanager lims" data-vendor="thermo fisher scientific">
+          <span class="sw-cat">Laboratory &amp; Quality</span>
+          <h4>SampleManager LIMS</h4>
+          <div class="sw-vendor">Thermo Fisher Scientific</div>
+          <p>LIMS that handles sample login, instrument integration, stability studies and quality documentation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in Saudi industrial, chemical and pharmaceutical laboratories requiring traceable quality records.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Project Controls &amp; GIS">
+      <h3 class="cat-group-title">Project Controls &amp; GIS <span>3 platforms</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Project Controls &amp; GIS" data-name="aconex" data-vendor="oracle">
+          <span class="sw-cat">Project Controls &amp; GIS</span>
+          <h4>Aconex</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Document and correspondence management for engineering and construction, giving an auditable project record.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Widely used as the project document control system on Saudi EPC and industrial construction contracts.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Project Controls &amp; GIS" data-name="arcgis enterprise" data-vendor="esri">
+          <span class="sw-cat">Project Controls &amp; GIS</span>
+          <h4>ArcGIS Enterprise</h4>
+          <div class="sw-vendor">Esri</div>
+          <p>Geographic information system for asset mapping, pipeline corridors, site selection and utility networks.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used across Saudi utilities, municipalities, industrial cities and pipeline operators for spatial asset data.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Project Controls &amp; GIS" data-name="primavera p6 eppm" data-vendor="oracle">
+          <span class="sw-cat">Project Controls &amp; GIS</span>
+          <h4>Primavera P6 EPPM</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Enterprise project scheduling and resource management standard for capital projects.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>The scheduling standard on Saudi projects for Aramco, SABIC, Ma'aden, SEC and giga-project developers.</div>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-empty" id="indEmpty">No platform matches your search — try another word, or <a href="#contact" style="color:#b388ff">ask us</a> about it.</div>
+  </div>
+</section>
+<section id="finance-software">
+  <div class="wrapper">
+    <div class="section-header reveal">
+      <div class="section-label"><i class="fas fa-calculator"></i> Accounting &amp; Finance</div>
+      <h2>Accounting &amp; Finance <span style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Software for KSA</span></h2>
+      <p>Browse the real platforms we implement, integrate and support — or search for the one you already use.</p>
+    </div>
+    <div class="catalog-tools reveal">
+      <input class="catalog-search" id="finSearch" type="search" placeholder="Search name, vendor or category…" aria-label="Search">
+      <div class="catalog-count" id="finCount"></div>
+    </div>
+    <div class="catalog-filter" id="finChips"></div>
+    <div class="sw-group" data-group="ERP &amp; Finance Suites">
+      <h3 class="cat-group-title">ERP &amp; Finance Suites <span>18 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="epicor kinetic" data-vendor="epicor">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Epicor Kinetic</h4>
+          <div class="sw-vendor">Epicor</div>
+          <p>ERP for manufacturing and distribution with finance, MRP, supply chain and shop-floor control.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Epicor's Middle East business supports Saudi manufacturers and distributors; KSA VAT and ZATCA e-invoicing are handled through Epicor localizations and partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="ifs cloud" data-vendor="ifs">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>IFS Cloud</h4>
+          <div class="sw-vendor">IFS</div>
+          <p>ERP with strong asset management, projects and service modules used in energy, utilities, aviation and construction.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>IFS has a Saudi presence serving asset-heavy sectors; finance modules can be localised for KSA VAT and connected to ZATCA-compliant e-invoicing tools.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="infor cloudsuite" data-vendor="infor">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Infor CloudSuite</h4>
+          <div class="sw-vendor">Infor</div>
+          <p>Industry cloud suites (manufacturing, healthcare, distribution, public sector) with embedded finance modules.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Infor serves Saudi industrial, healthcare and hospitality groups through its Middle East organisation and partners, with KSA VAT and ZATCA e-invoicing enabled per project.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="infor sunsystems" data-vendor="infor">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Infor SunSystems</h4>
+          <div class="sw-vendor">Infor</div>
+          <p>Finance-only ERP known for flexible multi-currency, multi-entity ledgers and analysis, often used by finance departments and shared-service centres.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Common in Gulf finance departments and multinational subsidiaries operating in KSA; KSA VAT and ZATCA e-invoicing are typically implemented by Infor's regional partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="microsoft dynamics 365 business central" data-vendor="microsoft">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Microsoft Dynamics 365 Business Central</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Mid-market cloud ERP for accounting, sales, purchasing and inventory with Power BI reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Popular with Saudi SMEs; KSA localizations/add-ons provide VAT, Arabic invoicing, ZATCA e-invoicing and WPS payroll file generation through Microsoft's partner channel.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="microsoft dynamics 365 finance" data-vendor="microsoft">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Microsoft Dynamics 365 Finance</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Cloud financial management covering GL, budgeting, AP/AR, credit and collections, and financial reporting inside the Dynamics 365 stack.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>KSA localization is delivered by Microsoft and partners: VAT, Arabic documents, and ZATCA Phase 2 e-invoicing through the electronic-invoicing add-in or partner solutions.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="odoo" data-vendor="odoo s.a.">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Odoo</h4>
+          <div class="sw-vendor">Odoo S.A.</div>
+          <p>Modular open-source ERP with accounting, invoicing, inventory, HR and payroll apps that can be adopted one module at a time.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Odoo publishes an official Saudi Arabia fiscal localization (VAT, ZATCA e-invoicing) and a Saudi payroll localization covering GOSI, end-of-service and payslips.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="oracle e-business suite" data-vendor="oracle">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Oracle E-Business Suite</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Long-established on-premise ERP whose financials, HR and procurement modules remain in production at many Saudi enterprises and public entities.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Extensive installed base in the Kingdom; ZATCA e-invoicing and KSA payroll/WPS are handled through Oracle localizations and regional system integrators.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="oracle fusion cloud erp" data-vendor="oracle">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Oracle Fusion Cloud ERP</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Cloud financials suite covering GL, AP/AR, fixed assets, cash management and project financials with continuous-close automation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Oracle has a large Saudi operation (Riyadh); KSA tax, zakat and ZATCA Phase 2 e-invoicing are supported through Oracle's Saudi localizations and regional partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="oracle netsuite" data-vendor="oracle">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Oracle NetSuite</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Cloud ERP/financials platform for growing and multi-entity companies, covering accounting, revenue recognition and consolidation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>NetSuite ships a Saudi Arabia E-Invoicing SuiteApp that applies ZATCA standards, and KSA deployments also cover GOSI/WPS payroll and zakat through partners such as Azdan.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="sage 300" data-vendor="sage">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Sage 300</h4>
+          <div class="sw-vendor">Sage</div>
+          <p>Financial management and operations ERP for mid-market companies, strong in project and distribution accounting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed across KSA via Sage resellers; ZATCA Phase 2 e-invoicing for Sage 300 is added with Saudi extensions such as the Abacus KSA E-Invoice module, and WPS payroll through partner modules.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="sage x3" data-vendor="sage">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Sage X3</h4>
+          <div class="sw-vendor">Sage</div>
+          <p>ERP for mid-to-large businesses with finance, purchasing, manufacturing and distribution in a single system.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Sage ships a licensed Saudi Arabian VAT pack for X3, and Sage Middle East (Riyadh/Dubai) delivers KSA projects with ZATCA e-invoicing handled by regional partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="sap business bydesign" data-vendor="sap">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>SAP Business ByDesign</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Cloud ERP for mid-sized companies with public-sector-style finance, project accounting, procurement and analytics in a single tenant.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Available in KSA as SAP's mid-market cloud option; KSA VAT and ZATCA-compliant e-invoicing are added through SAP's localization and partners rather than out of the box.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="sap business one" data-vendor="sap">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>SAP Business One</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Entry-level ERP for SMEs covering accounting, purchasing, inventory and reporting in one database.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Widely sold in the Kingdom through SAP's Saudi partner network; KSA VAT, Arabic documents and ZATCA e-invoicing are enabled through partner add-ons and SAP's KSA localisation.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="sap s/4hana" data-vendor="sap">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>SAP S/4HANA</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Flagship in-memory ERP whose Finance (FI/CO) module runs general ledger, AP/AR, asset accounting and consolidation for large Saudi enterprises and government-linked groups.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>SAP has offices in Riyadh and Jeddah; KSA VAT and zakat reporting plus ZATCA Phase 2 (Fatoora) e-invoicing are delivered through SAP Document and Reporting Compliance and local implementation partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="syspro" data-vendor="syspro">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>SYSPRO</h4>
+          <div class="sw-vendor">SYSPRO</div>
+          <p>ERP built for manufacturers and distributors with finance, costing, inventory and supply-chain modules.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Sold into Saudi manufacturing and distribution through SYSPRO's Middle East operation; KSA VAT and e-invoicing compliance are delivered as localization or partner add-ons.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="tallyprime" data-vendor="tally solutions">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>TallyPrime</h4>
+          <div class="sw-vendor">Tally Solutions</div>
+          <p>Accounting and inventory software known for simple ledgers, GST-style VAT handling and very low cost of ownership.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>ZATCA has qualified TallyPrime as a compliant Fatoora/e-invoicing solution (Phase 1 and Phase 2 packs), and it is distributed in the Kingdom by authorised KSA partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ERP &amp; Finance Suites" data-name="workday financial management" data-vendor="workday">
+          <span class="sw-cat">ERP &amp; Finance Suites</span>
+          <h4>Workday Financial Management</h4>
+          <div class="sw-vendor">Workday</div>
+          <p>Cloud finance suite covering accounting, spend, projects, and planning with continuous accounting and audit trail.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Adopted by Saudi large enterprises; Saudi payroll/statutory outputs are delivered through Workday payroll partners and connectors rather than a full native KSA payroll country localization.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Treasury, AP &amp; FP&amp;A">
+      <h3 class="cat-group-title">Treasury, AP &amp; FP&amp;A <span>15 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="anaplan" data-vendor="anaplan">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Anaplan</h4>
+          <div class="sw-vendor">Anaplan</div>
+          <p>Connected planning platform used for enterprise-wide budgeting, forecasting, sales and supply-chain planning models.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by large KSA organisations in retail, energy and banking for scenario planning; adoption runs alongside local finance systems rather than replacing them.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="blackline" data-vendor="blackline">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>BlackLine</h4>
+          <div class="sw-vendor">BlackLine</div>
+          <p>Finance automation platform for account reconciliation, close management, intercompany and journal entries.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Rolled out in the Gulf through regional partners; helps Saudi groups with multi-entity balance-sheet reconciliation and audit-ready close documentation under IFRS.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="cch tagetik" data-vendor="wolters kluwer">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>CCH Tagetik</h4>
+          <div class="sw-vendor">Wolters Kluwer</div>
+          <p>Corporate performance management software for consolidation, statutory reporting, planning and disclosure.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in the region for groups operating in KSA that need IFRS statutory reporting and zakat/tax data in a controlled close process.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="coupa" data-vendor="coupa">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Coupa</h4>
+          <div class="sw-vendor">Coupa</div>
+          <p>Business spend management platform covering procurement, invoicing (AP), expenses and spend analytics.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in KSA enterprise and government-linked procurement programmes; purchase invoice flows are configured for KSA VAT and ZATCA e-invoicing through integration partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="ibm planning analytics" data-vendor="ibm">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>IBM Planning Analytics</h4>
+          <div class="sw-vendor">IBM</div>
+          <p>TM1-based planning, budgeting and analytics engine with Excel integration for finance modelling.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by KSA finance teams for budgeting and driver-based planning, sitting on top of local accounting/ERP systems.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="kyriba" data-vendor="kyriba">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Kyriba</h4>
+          <div class="sw-vendor">Kyriba</div>
+          <p>Cloud treasury and liquidity management platform covering cash visibility, payments, bank connectivity, FX and risk.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Active in KSA with Saudi enterprise clients (for example Riyadh Air and Saudi German Health) and connectivity to banks and ERPs used in the Kingdom.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="onestream" data-vendor="onestream">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>OneStream</h4>
+          <div class="sw-vendor">OneStream</div>
+          <p>Corporate performance management platform for financial consolidation, close, planning and reporting in one model.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in the Gulf through regional partners for KSA and UAE groups needing IFRS-compliant consolidation and faster close.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="oracle epm cloud (fccs and planning)" data-vendor="oracle">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Oracle EPM Cloud (FCCS and Planning)</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Enterprise performance management with financial consolidation/close (FCCS) and planning, budgeting and forecasting modules.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi groups for IFRS consolidation, statutory close and budget cycles; supports SAR reporting and multi-entity structures common in the Kingdom.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="oracle treasury" data-vendor="oracle">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Oracle Treasury</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Treasury cloud module for cash positioning, bank account management, debt/investment and hedging within Oracle ERP.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in Saudi enterprises and government-related entities using Oracle financials, integrated with KSA banking and payment processes.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="sap analytics cloud" data-vendor="sap">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>SAP Analytics Cloud</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Cloud analytics and planning platform for financial planning, budgeting, forecasting and group reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi enterprises for IFRS-aligned group reporting and planning alongside their SAP ERP, with KSA zakat/tax data feeding group consolidation.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="sap ariba" data-vendor="sap">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>SAP Ariba</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Procurement and supplier network covering sourcing, contracts, purchase orders and supplier invoice automation.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi enterprises and suppliers in major KSA supply chains; invoice exchange can be aligned with ZATCA-compliant e-invoicing requirements.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="sap concur" data-vendor="sap">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>SAP Concur</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Travel, expense and invoice management with mobile receipt capture, policy enforcement and approval workflows.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Widely used by Saudi corporates and multinationals in the Kingdom; handles Arabic receipts and KSA VAT documentation for expense claims and reimbursements.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="sap treasury and risk management" data-vendor="sap">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>SAP Treasury and Risk Management</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Treasury module of S/4HANA covering cash management, in-house cash, debt and investment management, and market risk.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by large Saudi groups; handles KSA bank communication, FX for riyal/SAR transactions and integrates with SAP's ZATCA e-invoicing and VAT.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="workday adaptive planning" data-vendor="workday">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Workday Adaptive Planning</h4>
+          <div class="sw-vendor">Workday</div>
+          <p>Cloud planning and budgeting product for finance teams, with modelling, workforce planning and reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi entities already on Workday or as a standalone planning layer; multi-currency and SAR reporting supported.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Treasury, AP &amp; FP&amp;A" data-name="zoho expense" data-vendor="zoho corporation">
+          <span class="sw-cat">Treasury, AP &amp; FP&amp;A</span>
+          <h4>Zoho Expense</h4>
+          <div class="sw-vendor">Zoho Corporation</div>
+          <p>Expense reporting app with receipt scanning, mileage, approvals and accounting sync.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by KSA businesses on the Zoho Saudi data/edition path; captures VAT-compliant receipts and posts into Zoho Books for ZATCA-compliant invoicing.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="ZATCA E-Invoicing">
+      <h3 class="cat-group-title">ZATCA E-Invoicing <span>15 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="afaq information technology e-invoicing" data-vendor="afaq information technology">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Afaq Information Technology e-Invoicing</h4>
+          <div class="sw-vendor">Afaq Information Technology</div>
+          <p>Saudi IT provider offering e-invoicing and ERP/business software solutions for companies in the Kingdom.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Listed in ZATCA's Solution Providers Directory as a Phase Two qualified e-invoicing solution provider.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="avalara" data-vendor="avalara">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Avalara</h4>
+          <div class="sw-vendor">Avalara</div>
+          <p>Tax determination and compliance automation covering indirect tax calculation, returns and e-invoicing/e-document delivery.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Avalara's e-invoicing/continuous transaction control coverage includes KSA ZATCA so multinationals can issue Saudi-compliant e-invoices from their ERP.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="basware" data-vendor="basware">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Basware</h4>
+          <div class="sw-vendor">Basware</div>
+          <p>AP automation and e-invoicing network processing purchase invoices and sending compliant e-invoices.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Serves Gulf-based finance operations with e-invoice exchange, with ZATCA compliance delivered through its networks/local partners for Saudi entities.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="comarch e-invoicing" data-vendor="comarch">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Comarch e-Invoicing</h4>
+          <div class="sw-vendor">Comarch</div>
+          <p>E-invoicing platform and managed service covering invoice format conversion, signing, archiving and authority transmission.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Operates in the Middle East and supports ZATCA e-invoicing requirements alongside other national CTC/Peppol regimes for KSA-based customers.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="edicom e-invoicing" data-vendor="edicom">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Edicom e-Invoicing</h4>
+          <div class="sw-vendor">Edicom</div>
+          <p>E-invoicing and tax compliance services (format conversion, validation, signing, archiving) delivered as software or managed service.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Has Middle East operations serving Gulf customers and supports ZATCA (Fatoora) e-invoicing integration for KSA businesses.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="fawatear" data-vendor="fawatear">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Fawatear</h4>
+          <div class="sw-vendor">Fawatear</div>
+          <p>Saudi e-invoicing platform serving businesses that need compliant invoice issuance and reporting to the tax authority.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Listed in ZATCA's Solution Providers Directory as a Phase Two (integration phase) qualified e-invoicing solution provider.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="gem e-invoicing" data-vendor="gemini software solutions">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>GEM e-Invoicing</h4>
+          <div class="sw-vendor">Gemini Software Solutions</div>
+          <p>E-invoicing product family covering invoice generation, signing and submission to the Saudi tax authority platform.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Registered in ZATCA's Solution Providers Directory as a Phase Two qualified e-invoicing solution provider.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="invoiceq" data-vendor="invoiceq">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>InvoiceQ</h4>
+          <div class="sw-vendor">InvoiceQ</div>
+          <p>ZATCA-qualified e-invoicing system with connectors to ERPs and popular accounting apps such as QuickBooks.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Built for ZATCA Phase 2: manages invoice generation, clearance/reporting and QR requirements in KSA, and lets non-localised systems (e.g. QuickBooks users) comply.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="markets software (aswaqsoft)" data-vendor="aswaqsoft">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Markets Software (ASWAQSOFT)</h4>
+          <div class="sw-vendor">ASWAQSOFT</div>
+          <p>Business/POS-accounting software with e-invoicing that issues and reports tax invoices for retailers and traders.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Appears in ZATCA's Solution Providers Directory as a Phase Two qualified provider, i.e. integrated with the Fatoora clearance/reporting APIs.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="pagero (thomson reuters)" data-vendor="thomson reuters">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Pagero (Thomson Reuters)</h4>
+          <div class="sw-vendor">Thomson Reuters</div>
+          <p>Open e-invoicing and business-document network connecting companies, ERPs and tax authorities via Peppol and direct authority channels.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Now part of Thomson Reuters; provides ZATCA e-invoicing connectivity for Saudi suppliers and their ERPs, in addition to other national e-invoicing mandates.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="sap document and reporting compliance" data-vendor="sap">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>SAP Document and Reporting Compliance</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Compliance add-on for SAP ERP that generates and transmits statutory documents, including electronic invoices, to tax authorities.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Includes Saudi Arabia (ZATCA/Fatoora) support for both Phase 1 generation and Phase 2 integration reporting/clearance on SAP systems.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="sovos" data-vendor="sovos">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Sovos</h4>
+          <div class="sw-vendor">Sovos</div>
+          <p>Tax compliance and e-invoicing software covering continuous transaction controls, reporting and archiving for multinationals.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Handles KSA ZATCA e-invoicing among its global CTC mandates, used by multinational groups with Saudi entities.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="storecove" data-vendor="storecove">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Storecove</h4>
+          <div class="sw-vendor">Storecove</div>
+          <p>E-invoicing API/access point that software vendors embed to send and receive compliant e-invoices over Peppol-style networks.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Provides the connectivity layer that KSA software vendors use to reach ZATCA/Fatoora, so Saudi accounting products can become Phase 2 compliant quickly.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="tns trust" data-vendor="tns trust">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>TNS Trust</h4>
+          <div class="sw-vendor">TNS Trust</div>
+          <p>E-invoicing/billing solution marketed for Saudi businesses needing Fatoora compliance.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Appears in ZATCA's Solution Providers Directory as a Phase Two qualified solution provider for the integration phase of e-invoicing.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="ZATCA E-Invoicing" data-name="tradeshift" data-vendor="tradeshift">
+          <span class="sw-cat">ZATCA E-Invoicing</span>
+          <h4>Tradeshift</h4>
+          <div class="sw-vendor">Tradeshift</div>
+          <p>Business commerce network for e-invoicing, AP automation and supplier collaboration.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by regional groups with Saudi operations for supplier e-invoicing, with ZATCA compliance handled through its network and partners.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Payroll, WPS &amp; Mudad">
+      <h3 class="cat-group-title">Payroll, WPS &amp; Mudad <span>13 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="bayzat" data-vendor="bayzat">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Bayzat</h4>
+          <div class="sw-vendor">Bayzat</div>
+          <p>HR and payroll software plus employee benefits and insurance, used by SMEs across the GCC.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Bayzat's KSA payroll module handles WPS-compliance and GOSI, with Arabic documents and Saudi bank file formats.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="darwinbox" data-vendor="darwinbox">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Darwinbox</h4>
+          <div class="sw-vendor">Darwinbox</div>
+          <p>Enterprise cloud HCM spanning core HR, payroll, attendance, performance and analytics.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by large employers in Saudi Arabia with partial KSA localisation (GOSI/WPS handled through configuration and integrations) rather than a fully native Saudi payroll engine.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="focus hrms &amp; payroll" data-vendor="focus softnet">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Focus HRMS &amp; Payroll</h4>
+          <div class="sw-vendor">Focus Softnet</div>
+          <p>HR and payroll module inside Focus ERP covering employee records, leave, loans, gratuity and payroll processing.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Localised for KSA: GOSI and end-of-service calculations plus WPS salary file generation, supported from Focus Softnet's Riyadh, Jeddah and Dammam offices.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="hala business (payroll &amp; salary disbursement)" data-vendor="hala">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Hala Business (payroll &amp; salary disbursement)</h4>
+          <div class="sw-vendor">Hala</div>
+          <p>Saudi fintech offering business accounts, card/POS payments, expense management, financing and payroll tooling for SMEs and corporates.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi-domiciled product whose payroll and salary-disbursement features are positioned around Kingdom banking and WPS salary payment practice.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="jisr" data-vendor="jisr (riyadh)">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Jisr</h4>
+          <div class="sw-vendor">Jisr (Riyadh)</div>
+          <p>Saudi HR platform covering payroll, contracts, leaves, attendance and employee self-service for growing companies.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi-native: payroll aligned to Mudad/WPS, GOSI contributions and Qiwa/MHRSD requirements, with Saudization tracking for Nitaqat.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="menaitech" data-vendor="menaitech">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Menaitech</h4>
+          <div class="sw-vendor">Menaitech</div>
+          <p>Regional HRMS and payroll suite covering core HR, time and attendance, payroll and talent management.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Deployed in Gulf markets including Saudi Arabia, with payroll parameterised for GOSI, end-of-service and WPS salary files.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="microsoft dynamics 365 human resources" data-vendor="microsoft">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Microsoft Dynamics 365 Human Resources</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Cloud HR core covering personnel administration, compensation, benefits and leave, integrated with Dynamics 365 Finance.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi payroll and statutory outputs (GOSI, WPS) are delivered through Microsoft's KSA localisation partners and payroll integrations rather than a fully native country payroll.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="mudad" data-vendor="mudad (ministry of human resources and social development platform)">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Mudad</h4>
+          <div class="sw-vendor">Mudad (Ministry of Human Resources and Social Development platform)</div>
+          <p>National platform that regulates the employer-employee financial relationship by electronically documenting salary disbursements under the Wage Protection System (WPS).</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Not licensed software: every KSA employer files monthly WPS salary files through Mudad, so any payroll system in the Kingdom must produce Mudad-compatible salary files and reconcile them with GOSI.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="odoo payroll (saudi arabia localization)" data-vendor="odoo s.a.">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Odoo Payroll (Saudi Arabia localization)</h4>
+          <div class="sw-vendor">Odoo S.A.</div>
+          <p>Payroll app within Odoo that computes salaries, deductions and payslips from contracts and attendance data.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Odoo publishes an official Saudi Arabia payroll localisation covering GOSI contributions, Saudi end-of-service rules and payslip generation.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="oracle fusion cloud payroll" data-vendor="oracle">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>Oracle Fusion Cloud Payroll</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Cloud payroll engine supporting multiple legislative country versions, retro pay, and payroll costing.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Oracle provides a Saudi Arabia payroll localisation: GOSI social insurance, end-of-service gratuity, and WPS-compliant salary file outputs for KSA employers.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="palmhr" data-vendor="palmhr">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>PalmHR</h4>
+          <div class="sw-vendor">PalmHR</div>
+          <p>All-in-one HR and payroll platform built for SMEs in Saudi Arabia and the wider GCC, including payroll processing services.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Marketed specifically for KSA and GCC SMEs with payroll automation, GOSI and WPS handling rather than spreadsheet salary runs.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="sap successfactors employee central payroll" data-vendor="sap">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>SAP SuccessFactors Employee Central Payroll</h4>
+          <div class="sw-vendor">SAP</div>
+          <p>Cloud payroll engine with country versions, payroll control centre and integration to SAP HCM/Employee Central.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>SAP's Saudi Arabia payroll country version calculates GOSI, deductions and end-of-service, and can export salary files for WPS/Mudad submission.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Payroll, WPS &amp; Mudad" data-name="zenhr" data-vendor="zenhr">
+          <span class="sw-cat">Payroll, WPS &amp; Mudad</span>
+          <h4>ZenHR</h4>
+          <div class="sw-vendor">ZenHR</div>
+          <p>MENA cloud HR and payroll platform covering employee records, leave, attendance, payroll runs and self-service mobile app.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Purpose-built for Saudi labour law: automated GOSI calculations, WPS-compliant salary file generation for Saudi banks, end-of-service accruals, Saudization support and full Arabic RTL interface.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Retail &amp; Restaurant POS">
+      <h3 class="cat-group-title">Retail &amp; Restaurant POS <span>11 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="foodics" data-vendor="foodics (riyadh)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Foodics</h4>
+          <div class="sw-vendor">Foodics (Riyadh)</div>
+          <p>Cloud POS and restaurant management system covering orders, kitchen display, inventory, delivery integration and finance/reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi-founded and ZATCA-focused: generates tax-compliant invoices at the till, and expanded in MENA F&amp;B through acquisitions (including POSRocket).</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="geidea" data-vendor="geidea (riyadh)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Geidea</h4>
+          <div class="sw-vendor">Geidea (Riyadh)</div>
+          <p>Saudi payments and merchant technology provider offering POS terminals, SoftPOS and business management tooling to over 150,000 merchants.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Riyadh-headquartered and Saudi-regulated; POS sales flow into merchant finance systems, and Geidea has partnered with software vendors to distribute KSA ZATCA-ready POS and cashier software.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="marn pos" data-vendor="marn (riyadh)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Marn POS</h4>
+          <div class="sw-vendor">Marn (Riyadh)</div>
+          <p>Cloud point-of-sale system for retail and restaurants with sales, inventory, shift and branch reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi POS vendor whose system is described by the company as certified by the tax authority to issue compliant invoices, i.e. ZATCA-ready at the till.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="microsoft dynamics 365 commerce" data-vendor="microsoft">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Microsoft Dynamics 365 Commerce</h4>
+          <div class="sw-vendor">Microsoft</div>
+          <p>Retail and e-commerce platform covering store operations, merchandising, call centre and omnichannel finance postings.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi retailers running Dynamics 365 use Microsoft's KSA localisation and partners for VAT and ZATCA Phase 2 e-invoicing of store transactions.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="ncr voyix (aloha / retail pos)" data-vendor="ncr voyix">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>NCR Voyix (Aloha / Retail POS)</h4>
+          <div class="sw-vendor">NCR Voyix</div>
+          <p>POS and self-service platforms for retail, hospitality and banking environments, with store-level analytics.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Long-standing supplier to Saudi retail and hospitality operators; POS transaction data is integrated into finance systems and KSA e-invoicing through partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="neoleap" data-vendor="neoleap (saudi arabia)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>neoleap</h4>
+          <div class="sw-vendor">neoleap (Saudi Arabia)</div>
+          <p>Saudi fintech platform for merchant POS, SoftPOS and restaurant ECR systems plus e-commerce payment acceptance.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi-owned payment solutions provider; its restaurant POS/ECR products give KSA F&amp;B and retail merchants till-level invoicing that must comply with ZATCA e-invoicing rules.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="oracle micros simphony" data-vendor="oracle">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Oracle MICROS Simphony</h4>
+          <div class="sw-vendor">Oracle</div>
+          <p>Enterprise restaurant/hotel POS platform with central management for multi-outlet F&amp;B operations.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi hotels, QSR chains and catering groups; integrates into Oracle finance and can feed ZATCA-compliant invoicing through Oracle localization kits.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="rewaa" data-vendor="rewaa (riyadh)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Rewaa</h4>
+          <div class="sw-vendor">Rewaa (Riyadh)</div>
+          <p>Retail POS, inventory and accounting platform for Saudi retailers, from single-store to multi-branch chains.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Built in Saudi Arabia with ZATCA-compliant e-invoicing at the POS and back-office finance, plus Mada/STC Pay payment integrations.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="salla" data-vendor="salla (saudi arabia)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Salla</h4>
+          <div class="sw-vendor">Salla (Saudi Arabia)</div>
+          <p>Saudi e-commerce platform and merchant ecosystem covering storefronts, payments, logistics and accounting integrations.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>One of the largest KSA e-commerce platforms by merchant count; merchants issue ZATCA-compliant e-invoices through Salla and its accounting-app integrations.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="sapaad" data-vendor="sapaad">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Sapaad</h4>
+          <div class="sw-vendor">Sapaad</div>
+          <p>Cloud restaurant POS with billing, kitchen operations, delivery aggregation and menu management.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Sold into Saudi and wider GCC F&amp;B operators; sales data can be tied to ZATCA e-invoicing requirements through compliant invoice output/integrations.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Retail &amp; Restaurant POS" data-name="zid" data-vendor="zid (riyadh)">
+          <span class="sw-cat">Retail &amp; Restaurant POS</span>
+          <h4>Zid</h4>
+          <div class="sw-vendor">Zid (Riyadh)</div>
+          <p>Saudi e-commerce platform for online merchants, with storefronts, payments, shipping and invoicing.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Saudi-built for online sellers; tax-compliant invoice issuance for merchants is a core feature, aligning with ZATCA e-invoicing obligations for B2C sales.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="KSA Cloud Accounting">
+      <h3 class="cat-group-title">KSA Cloud Accounting <span>9 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="daftra" data-vendor="daftra">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Daftra</h4>
+          <div class="sw-vendor">Daftra</div>
+          <p>MENA cloud accounting and invoicing system with inventory, POS and CRM modules aimed at small businesses.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Daftra markets ZATCA e-invoicing (Phase 1 and Phase 2 integration guides and support) for Saudi users, along with KSA VAT and Arabic invoicing.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="draft erp" data-vendor="draft">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Draft ERP</h4>
+          <div class="sw-vendor">Draft</div>
+          <p>Saudi-built cloud ERP/accounting system covering invoicing, accounting, inventory and business reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Listed by ZATCA as a Phase Two qualified e-invoicing solution provider, i.e. already connected to the Fatoora integration phase requirements.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="focus 9 erp" data-vendor="focus softnet">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Focus 9 ERP</h4>
+          <div class="sw-vendor">Focus Softnet</div>
+          <p>ERP suite running finance, sales, purchase, inventory, HR/payroll and projects, sold in on-premise and cloud editions.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Focus Softnet operates in Riyadh, Jeddah, Dammam and Al-Khobar and localises Focus 9 for KSA VAT, ZATCA e-invoicing and Saudi HR/payroll requirements.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="qaema" data-vendor="marn (riyadh)">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Qaema</h4>
+          <div class="sw-vendor">Marn (Riyadh)</div>
+          <p>Accounting and financial management product from Saudi POS vendor Marn, aimed at owners who want bookkeeping tied to their sales data.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Built in Saudi Arabia around KSA invoicing and VAT, with the vendor stating tax-authority compliant invoice issuance across its products.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="qoyod" data-vendor="qoyod (riyadh)">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Qoyod</h4>
+          <div class="sw-vendor">Qoyod (Riyadh)</div>
+          <p>Saudi cloud accounting platform with invoicing, inventory, banking and VAT/zakat reporting built for Arabic-first SMEs.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Natively integrated with the ZATCA platform for Phase 2: XML/UBL 2.1 e-invoices, mandatory QR codes and cryptographic stamping, with Saudi support and 25,000+ local business users.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="rawabit (روابط)" data-vendor="rawabit">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Rawabit (روابط)</h4>
+          <div class="sw-vendor">Rawabit</div>
+          <p>Saudi cloud accounting/bookkeeping platform covering invoicing, expenses and VAT filings for small companies.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Listed in ZATCA's Solution Providers Directory as a Phase Two (integration-phase) qualified e-invoicing provider.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="sowaanerp" data-vendor="sowaan">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>SowaanERP</h4>
+          <div class="sw-vendor">Sowaan</div>
+          <p>Modular ERP for mid-market manufacturing, distribution, retail and services, with accounting, inventory and sales modules that can be adopted incrementally.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Sowaan's KSA business sells ZATCA-approved e-invoicing with Phase 2 integration on top of its ERP, aimed at Saudi SMEs.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="tablyfi" data-vendor="tablyfi">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Tablyfi</h4>
+          <div class="sw-vendor">Tablyfi</div>
+          <p>Saudi cloud accounting and e-invoicing product for SMEs, with invoice issuance and bookkeeping in the browser.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Appears in ZATCA's Solution Providers Directory as a Phase Two qualified e-invoicing solution provider.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="KSA Cloud Accounting" data-name="wafeq" data-vendor="wafeq (riyadh)">
+          <span class="sw-cat">KSA Cloud Accounting</span>
+          <h4>Wafeq</h4>
+          <div class="sw-vendor">Wafeq (Riyadh)</div>
+          <p>Saudi cloud accounting and e-invoicing platform covering invoicing, bills, banking, payroll-related ledgers and financial statements.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>ZATCA Phase 2 compliant (XML and PDF/A-3 generation, QR, clearance/reporting) and used by KSA companies including Tabby; VAT and zakat reporting are built for the Saudi rules.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Audit &amp; Tax Software">
+      <h3 class="cat-group-title">Audit &amp; Tax Software <span>7 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="auditboard" data-vendor="auditboard">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>AuditBoard</h4>
+          <div class="sw-vendor">AuditBoard</div>
+          <p>Connected risk platform for SOX/internal audit, risk, compliance and ESG programmes.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by larger Gulf entities with KSA operations; relevant for control documentation underpinning IFRS reporting and regulatory reviews.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="caseware idea" data-vendor="caseware">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>CaseWare IDEA</h4>
+          <div class="sw-vendor">CaseWare</div>
+          <p>Data analysis software for auditors, used for journal-entry testing, sampling and fraud detection on full-population data.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Applied in KSA external and internal audit work, including testing VAT and payroll data extracted from Saudi ERP/payroll systems.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="caseware working papers" data-vendor="caseware">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>CaseWare Working Papers</h4>
+          <div class="sw-vendor">CaseWare</div>
+          <p>Audit working papers and engagement management software used to prepare, review and archive audit files.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by audit practices in the region for IFRS-based KSA engagements; supports electronic working papers, sign-offs and file review for SOCPA-registered firms.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="datasnipper" data-vendor="datasnipper">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>DataSnipper</h4>
+          <div class="sw-vendor">DataSnipper</div>
+          <p>Excel-based audit automation that links, verifies and documents source documents inside audit workpapers.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Adopted by audit teams working on KSA engagements (including international network firms auditing Saudi entities) to evidence vouching and testing.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="diligent highbond" data-vendor="diligent">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>Diligent HighBond</h4>
+          <div class="sw-vendor">Diligent</div>
+          <p>GRC platform combining audit analytics, risk registers, controls testing and compliance workflows.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi organisations for internal audit and governance programmes, including regulatory-driven reviews; deployments served through regional partners.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="onesource" data-vendor="thomson reuters">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>ONESOURCE</h4>
+          <div class="sw-vendor">Thomson Reuters</div>
+          <p>Corporate tax and statutory reporting suite covering tax determination, transfer pricing, returns, and e-invoicing.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Provides KSA content for VAT/zakat compliance and ZATCA e-invoicing workflows used by multinationals with Saudi entities and their advisers.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Audit &amp; Tax Software" data-name="teammate+" data-vendor="wolters kluwer">
+          <span class="sw-cat">Audit &amp; Tax Software</span>
+          <h4>TeamMate+</h4>
+          <div class="sw-vendor">Wolters Kluwer</div>
+          <p>Audit management system for internal audit and assurance teams covering risk assessment, planning, fieldwork and reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by Saudi banks, insurers and enterprises whose internal audit functions follow IIA standards and SAMA-style expectations.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sw-group" data-group="Cloud Accounting SaaS">
+      <h3 class="cat-group-title">Cloud Accounting SaaS <span>5 systems</span></h3>
+      <div class="sw-grid">
+        <div class="sw-card reveal" data-cat="Cloud Accounting SaaS" data-name="freshbooks" data-vendor="freshbooks">
+          <span class="sw-cat">Cloud Accounting SaaS</span>
+          <h4>FreshBooks</h4>
+          <div class="sw-vendor">FreshBooks</div>
+          <p>Invoicing-led accounting for freelancers and very small service businesses, with time tracking and expenses.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used by small Saudi consultancies and freelancers as a simple invoicing ledger; it has no native ZATCA Phase 2 integration, so KSA e-invoicing must be issued through a local compliant platform.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Cloud Accounting SaaS" data-name="quickbooks online" data-vendor="intuit">
+          <span class="sw-cat">Cloud Accounting SaaS</span>
+          <h4>QuickBooks Online</h4>
+          <div class="sw-vendor">Intuit</div>
+          <p>SME cloud accounting with invoicing, bank reconciliation, expense capture and reporting.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Widely used by Saudi SMEs and accountants for VAT-ready bookkeeping; ZATCA Phase 2 compliance is achieved by connecting certified connectors such as InvoiceQ or QuiXcel.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Cloud Accounting SaaS" data-name="sage business cloud accounting" data-vendor="sage">
+          <span class="sw-cat">Cloud Accounting SaaS</span>
+          <h4>Sage Business Cloud Accounting</h4>
+          <div class="sw-vendor">Sage</div>
+          <p>Browser-based accounting for small businesses with invoicing, VAT and cash-flow views.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Sage Middle East sells and supports Sage accounting products in the Kingdom; KSA VAT is supported and ZATCA e-invoicing is handled through Sage or partner add-ons.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Cloud Accounting SaaS" data-name="xero" data-vendor="xero">
+          <span class="sw-cat">Cloud Accounting SaaS</span>
+          <h4>Xero</h4>
+          <div class="sw-vendor">Xero</div>
+          <p>Cloud accounting with bank feeds, invoicing and app marketplace, popular with small advisory-led businesses.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Used in KSA mainly by expatriate-owned and consulting SMEs; Xero has no native ZATCA Phase 2 integration, so Saudi users pair it with a local Fatoora-compliant e-invoicing tool.</div>
+        </div>
+        <div class="sw-card reveal" data-cat="Cloud Accounting SaaS" data-name="zoho books" data-vendor="zoho corporation">
+          <span class="sw-cat">Cloud Accounting SaaS</span>
+          <h4>Zoho Books</h4>
+          <div class="sw-vendor">Zoho Corporation</div>
+          <p>Cloud accounting for SMEs: invoicing, expenses, bank feeds, VAT returns and multi-currency books.</p>
+          <div class="sw-ksa"><i class="fas fa-check-circle"></i>Zoho Books has a dedicated Saudi Arabia edition with Phase-2 ZATCA e-invoicing built in (UBL/XML, QR code, CSID onboarding), plus KSA VAT and Arabic invoices.</div>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-empty" id="finEmpty">No platform matches your search — try another word, or <a href="#contact" style="color:#b388ff">ask us</a> about it.</div>
+  </div>
+</section>
+<!-- SERVICES-CATALOGS-END -->
 <!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="wrapper">
@@ -864,6 +2383,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// ===== SOFTWARE CATALOG JS =====
+(function () {
+  const catalogs = [
+    { root: 'industrial-software', search: 'indSearch', count: 'indCount', chips: 'indChips', empty: 'indEmpty' },
+    { root: 'finance-software',    search: 'finSearch', count: 'finCount', chips: 'finChips', empty: 'finEmpty' }
+  ];
+
+  function build(c) {
+    const section = document.getElementById(c.root);
+    if (!section) return;
+    const cards = Array.from(section.querySelectorAll('.sw-card'));
+    const groups = Array.from(section.querySelectorAll('.sw-group'));
+    const cats = Array.from(new Set(cards.map(el => el.dataset.cat))).sort();
+    const chipBox = document.getElementById(c.chips);
+    const searchBox = document.getElementById(c.search);
+    const countBox = document.getElementById(c.count);
+    const emptyBox = document.getElementById(c.empty);
+    let active = 'all';
+
+    chipBox.innerHTML = ['all'].concat(cats).map(cat =>
+      `<button class="filter-btn${cat === 'all' ? ' active' : ''}" data-cat="${cat}">${
+        cat === 'all' ? 'All' : cat} <span style="opacity:.6">${
+        cat === 'all' ? cards.length : cards.filter(el => el.dataset.cat === cat).length}</span></button>`).join('');
+
+    function apply() {
+      const q = (searchBox.value || '').trim().toLowerCase();
+      let shown = 0;
+      cards.forEach(el => {
+        const hitCat = active === 'all' || el.dataset.cat === active;
+        const hitText = !q || el.textContent.toLowerCase().includes(q) ||
+                        el.dataset.name.includes(q) || el.dataset.vendor.includes(q);
+        const ok = hitCat && hitText;
+        el.classList.toggle('sw-hidden', !ok);
+        if (ok) shown++;
+      });
+      groups.forEach(g => {
+        const any = g.querySelector('.sw-card:not(.sw-hidden)');
+        g.classList.toggle('sw-hidden', !any);
+      });
+      countBox.textContent = shown + ' of ' + cards.length + ' platforms shown';
+      emptyBox.classList.toggle('show', shown === 0);
+    }
+
+    chipBox.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      chipBox.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      active = btn.dataset.cat;
+      apply();
+    });
+    searchBox.addEventListener('input', apply);
+    apply();
+  }
+
+  catalogs.forEach(build);
+})();
+// ===== /SOFTWARE CATALOG JS =====
 </script>
 </body>
 </html>
